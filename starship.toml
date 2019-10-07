@@ -1,0 +1,23 @@
+# ~/.config/starship.toml
+
+# Disable the newline at the start of the prompt
+add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]      # The name of the module we are confguring is "character"
+symbol = "➜ "     # The "symbol" segment is being set to "➜"
+
+# this shows only when the devise's battery is under 10%
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+# Git branch module
+[git_branch]
+symbol = "🍂 "
+
+# Git status
+[git_status]
+disabled = true
+
