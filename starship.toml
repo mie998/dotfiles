@@ -5,19 +5,34 @@ add_newline = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are confguring is "character"
-symbol = "➜ "     # The "symbol" segment is being set to "➜"
-
-# this shows only when the devise's battery is under 10%
-[battery]
-full_symbol = "🔋 "
-charging_symbol = "⚡️ "
-discharging_symbol = "💀 "
-
-# Git branch module
-[git_branch]
-symbol = "🍂 "
+symbol = "➜"     # The "symbol" segment is being set to "➜"
 
 # Git status
 [git_status]
 disabled = true
 
+[aws]
+symbol = "☁ "
+
+[golang]
+symbol = "Go! "
+
+[hostname]
+prefix = "⟪"
+suffix = "⟫"
+
+[java]
+symbol = "☕"
+
+[python]
+symbol = "⛎"
+
+[ruby]
+symbol = "☪ "
+
+[rust]
+symbol = "⚙️ "
+
+[time]
+disabled = false
+format = "🕙[ %T ]"

@@ -1,4 +1,6 @@
 ." setting
+" ファイルタイプ検出
+filetype plugin indent on
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -30,12 +32,15 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
+
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
 " シンタックスハイライトの有効化
 syntax enable
 
+" moloakiはビジュアルモードが見づらいのでそれだけ色を変更
+autocmd colorscheme molokai highlight Visual ctermbg=8
 " カラースキーム
 colorscheme molokai
 " ダーク系のカラースキームを使う
@@ -57,17 +62,20 @@ set shiftwidth=4
 set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
-set incsearch
+" インクリメンタルサーチをしない
+set noincsearch
 " 検索時に最後まで行ったら最初に戻る
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
+
+" キーバインド
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" カーソルの回り込みを許可
+set whichwrap=b,s,[,],<,>
 "j連打でエスケープ"
 inoremap <silent> jj <Esc>
-
 " 入力モードでのカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
