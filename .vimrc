@@ -36,6 +36,11 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
+" vim高速移動
+nnoremap H 10h
+nnoremap J 10j
+nnoremap K 10k
+nnoremap L 10l
 " シンタックスハイライトの有効化
 syntax enable
 
@@ -81,3 +86,9 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+" insert mode では emacs系キーバインド
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-a> <Esc> I
+inoremap <C-e> <Esc> A
+
