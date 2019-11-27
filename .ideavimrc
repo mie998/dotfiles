@@ -1,0 +1,4 @@
+" load keymap from separated .vimrc settings
+source .vimrc.keymap
+
+" idea unique settings
