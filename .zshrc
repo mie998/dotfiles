@@ -244,3 +244,7 @@ export PATH=/home/mie/UnrealEngine/Engine/Binaries/Linux/:$PATH
 
 # added 3/11 for nodebrew install (via curl)
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# added 6/20, 2020 for locate command alias
+# for install mlocate, check this site: https://www.tecmint.com/install-locate-command-to-find-files-in-centos/
+alias loc='locate'
