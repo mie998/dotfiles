@@ -31,6 +31,19 @@ colors() {
 	done
 }
 
+# colrizing the man command
+_man(){
+    env LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
+}
+alias man="_man"
+
 # # ex - archive extractor
 # # usage: ex <file>
 ex ()
@@ -55,11 +68,35 @@ ex ()
   fi
 }
 
-# fuction for c++ test
+# fuction for c++ competitive programming
 cout() {
     filename=$1
-    g++ -Wall -std=c++14 $1
+    g++ -Wall -ggdb3 -fsanitize=undefined -D_GLIBCXX_DEBUG -std=c++17 $1
     ./a.out < ~/Work/purokon/etc/input.txt
+    rm -f a.out
+}
+
+# function for python competitive programming
+pyout() {
+    filename=$1
+    python $1 < ~/Work/purokon/etc/input.txt
+}
+
+# function for online-judge-tools
+ojd() {
+    # download
+    if [ -e test/ ]; then
+        rm -rf test/
+    fi
+    url=$1
+    oj download $url
+}
+
+ojt() {
+    # test
+    filename=$1
+    g++ -Wall -std=c++17 $filename
+    oj t 
     rm -f a.out
 }
 #######################################################
@@ -71,8 +108,10 @@ alias la='ls -A'
 alias ll='ls -l'
 alias gr='grep --color'
 alias vi='vim'
+alias dk='docker'
+alias dkc='docker-compose'
 alias src='source'
-alias vless='/usr/share/vim/vim81/macros/less.sh'
+alias vless='/usr/share/vim/vim82/macros/less.sh'
 # secure file system
 alias cp='cp -i'
 alias rm='rm -i'
@@ -177,9 +216,12 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################## options
 
 # added 10/8,2019 for japanese input
-export GTK_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-export QT_IM_MODULE=fcitx
+# removed 5/20, 2020 for japanese input trable shooting
+# reference this: https://wiki.archlinux.jp/index.php/Fcitx
+# but, added same expression to .zshprofile
+# export GTK_IM_MODULE=fcitx
+# export XMODIFIERS=@im=fcitx
+# export QT_IM_MODULE=fcitx
 
 # added 10/8,2019 for starship
 eval "$(starship init zsh)"
@@ -187,3 +229,18 @@ eval "$(starship init zsh)"
 # added 10/14, 2019 for java_home settings
 export JAVA_HOME=/usr/lib/jvm/java-13-jdk
 
+# added PATH for cargo crates binaries
+export PATH=/home/mie/.cargo/bin:$PATH
+
+# added RUST_TRACEBACK for debug
+export RUST_BACKTRACE=1
+
+# added on 2019/12/5 for pbcopy
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# added 12/16 for UnrealEngineEditor
+export PATH=/home/mie/UnrealEngine/Engine/Binaries/Linux/:$PATH
+
+# added 3/11 for nodebrew install (via curl)
+export PATH=$HOME/.nodebrew/current/bin:$PATH
