@@ -45,6 +45,7 @@ nnoremap L 10l
 syntax enable
 
 " moloakiはビジュアルモードが見づらいのでそれだけ色を変更
+" 参考: http://pyoonn.hatenablog.com/entry/2014/10/04/225321
 autocmd colorscheme molokai highlight Visual ctermbg=8
 " カラースキーム
 colorscheme molokai
