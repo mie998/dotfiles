@@ -1,136 +1,92 @@
 // Place your settings in this file to overwrite the default settings
 {
+    // common settings
     "workbench.colorTheme": "Darcula",
-    "C_Cpp.errorSquiggles": "Disabled",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "editor.scrollBeyondLastLine": true,
-    "files.encoding": "utf8", //文字コードの指定(c++の文字化け対策)
-    "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4}",
-    "files.insertFinalNewline": true, //最終行に空白を挿入
+    "files.encoding": "utf8", // designate character code for preventing garbling
+    "files.insertFinalNewline": true,
+    "files.autoSave": "onFocusChange",
     "editor.suggestSelection": "first",
+    "editor.tabCompletion": "on", // for user snippet, enable tabCompletion
+    "emmet.triggerExpansionOnTab": true, // for user snippet, enable emmetExpantionOnTab
     "workbench.iconTheme": "vscode-icons",
     "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "C_Cpp.updateChannel": "Insiders",
-    // vim settings
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+
+    // vscode-vim settings
     "vim.useSystemClipboard": true, // clipboard を vim と統合
     "vim.hlsearch": true, // 検索結果をハイライト
     "vim.visualstar": true, // * や # キーでカーソル配下の文字列を検索する
     "vim.leader": "<space>",
-    "vim.easymotion": true,
     "editor.lineNumbers": "relative", // 相対行番号
     "vim.whichwrap": "h,l,<,>,[,]", // 行末からさらに右に移動すると、次の行の先頭に移動するなど
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-x>": false,
+        "<C-z>": false,
+        "<C-f>": false,
+        "<C-b>": false
+    },
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": [
-                "J"
-            ],
-            "after": [
-                "1",
-                "0",
-                "j"
-            ]
+            "before": ["J"],
+            "after": ["1", "0", "j"]
         }, //移動を早める
         {
-            "before": [
-                "K"
-            ],
-            "after": [
-                "1",
-                "0",
-                "k"
-            ]
+            "before": ["K"],
+            "after": ["1", "0", "k"]
         }, //移動を早める
         {
-            "before": [
-                "H"
-            ],
-            "after": [
-                "0"
-            ]
+            "before": ["H"],
+            "after": ["0"]
         }, //端に移動
         {
-            "before": [
-                "L"
-            ],
-            "after": [
-                "$"
-            ]
+            "before": ["L"],
+            "after": ["$"]
         },
         {
-            "before": [
-                "<Enter>"
-            ],
-            "commands": [
-                "editor.action.insertLineAfter"
-            ]
-        },
-        { // easy motion shortcut
-            "before": [
-                "f"
-            ],
-            "after": [
-                "<Leader>",
-                "<Leader>",
-                "2",
-                "s"
-            ]
+            "before": ["<Enter>"],
+            "commands": ["editor.action.insertLineAfter"]
         }
     ],
     "vim.insertModeKeyBindingsNonRecursive": [
         {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<Esc>"
-            ],
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
         },
         {
-            "before": [
-                "<C-p>"
-            ],
-            "after": [
-                "<Esc>",
-                "o",
-                "i"
-            ],
+            "before": ["<C-h>"],
+            "after": ["<Left>"]
         },
         {
-            "before": [
-                "<C-n>"
-            ],
-            "after": [
-                "<Esc>",
-                "j",
-                "a"
-            ]
-        },
-        {
-            "before": [
-                "<C-a>"
-            ],
-            "after": [
-                "<Esc>",
-                "0",
-                "i"
-            ]
-        },
-        {
-            "before": [
-                "<C-e>"
-            ],
-            "after": [
-                "<Esc>",
-                "A"
-            ]
+            "before": ["<C-l>"],
+            "after": ["<Right>"]
         }
     ],
+
+    // use prettier-vscode as default formatter
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.tabWidth": 4,
+    "[json]": {},
     "[markdown]": {
         "editor.formatOnSave": false,
-        "editor.formatOnType": false,
+        "editor.formatOnType": false
+    },
+
+    // global setting for JS
+    "[javascript]": {},
+    // global setting for c++
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    // global setting for rust
+    "[rust]": {
+        "editor.defaultFormatter": "statiolake.vscode-rustfmt"
     }
 }
-
