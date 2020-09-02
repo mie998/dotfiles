@@ -221,6 +221,8 @@ setopt hist_no_store
 setopt hist_expand
 # 履歴をインクリメンタルに追加
 setopt inc_append_history
+# 履歴共有
+setopt share_history
 ########################################
 # キーバインド
 # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
