@@ -201,6 +201,10 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 # 同時に起動したzshの間でヒストリを共有する
 setopt share_history
+# メモリに保存される履歴の件数
+export HISTSIZE=1000
+# 履歴ファイルに保存される履歴の件数
+export SAVEHIST=100000
 # 同じコマンドをヒストリに残さない
 setopt hist_ignore_all_dups
 # スペースから始まるコマンド行はヒストリに残さない
@@ -209,10 +213,22 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 # 高機能なワイルドカード展開を使用する
 setopt extended_glob
+# ヒストリを呼び出してから実行する間に一旦編集可能
+setopt hist_verify
+# historyコマンドは履歴に登録しない
+setopt hist_no_store
+# 補完時にヒストリを自動的に展開
+setopt hist_expand
+# 履歴をインクリメンタルに追加
+setopt inc_append_history
 ########################################
 # キーバインド
 # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
 bindkey '^R' history-incremental-pattern-search-backward
+# history search
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
+bindkey '^h' zaw-history
 ########################################## options
 
 # added 10/8,2019 for japanese input
@@ -225,6 +241,9 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 # added 10/8,2019 for starship
 eval "$(starship init zsh)"
+
+# added 9/2,2020 for zaw-history setup
+source ~/.zsh_plugin/zaw/zaw.zsh
 
 # added 10/14, 2019 for java_home settings
 export JAVA_HOME=/usr/lib/jvm/java-13-jdk
