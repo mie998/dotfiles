@@ -201,10 +201,6 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 # 同時に起動したzshの間でヒストリを共有する
 setopt share_history
-# メモリに保存される履歴の件数
-export HISTSIZE=1000
-# 履歴ファイルに保存される履歴の件数
-export SAVEHIST=100000
 # 同じコマンドをヒストリに残さない
 setopt hist_ignore_all_dups
 # スペースから始まるコマンド行はヒストリに残さない
