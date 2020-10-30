@@ -241,6 +241,9 @@ bindkey '^h' zaw-history
 eval "$(starship init zsh)"
 
 # added 9/2,2020 for zaw-history setup
+# mkdir ~/zsh_plugins
+# cd zsh_plugins
+# git clone git://github.com/zsh-users/zaw.git
 source ~/.zsh_plugin/zaw/zaw.zsh
 
 # added 10/14, 2019 for java_home settings
