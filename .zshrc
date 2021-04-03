@@ -120,6 +120,12 @@ alias ga='git add'
 alias gaa='git add -A'
 alias gcm='git commit -m'
 alias gp='git push'
+gta() {
+    version=$1
+    git tag -a $version -m $version
+}
+alias gpt='git push --tags'
+
 #####################################################
 
 #####################################################
