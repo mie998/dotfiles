@@ -285,3 +285,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# added 04/14, 2021. for machine-dependent procedures
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
