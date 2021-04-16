@@ -240,14 +240,6 @@ bindkey '^N' history-beginning-search-forward
 bindkey '^h' zaw-history
 ########################################## options
 
-# added 10/8,2019 for japanese input
-# removed 5/20, 2020 for japanese input trable shooting
-# reference this: https://wiki.archlinux.jp/index.php/Fcitx
-# but, added same expression to .zshprofile
-# export GTK_IM_MODULE=fcitx
-# export XMODIFIERS=@im=fcitx
-# export QT_IM_MODULE=fcitx
-
 # added 10/8,2019 for starship
 eval "$(starship init zsh)"
 
@@ -265,10 +257,6 @@ export PATH=/home/mie/.cargo/bin:$PATH
 
 # added RUST_TRACEBACK for debug
 export RUST_BACKTRACE=1
-
-# added on 2019/12/5 for pbcopy
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
 
 # added 12/16 for UnrealEngineEditor
 export PATH=/home/mie/UnrealEngine/Engine/Binaries/Linux/:$PATH
