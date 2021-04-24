@@ -268,10 +268,15 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # for install mlocate, check this site: https://www.tecmint.com/install-locate-command-to-find-files-in-centos/
 alias loc='locate'
 
-# added 6/24, 2020 for pyenv setup
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if [ -e "$HOME/.anyenv" ]
+then
+    export ANYENV_ROOT="$HOME/.anyenv"
+    export PATH="$ANYENV_ROOT/bin:$PATH"
+    if command -v anyenv 1>/dev/null 2>&1
+    then
+        eval "$(anyenv init -)"
+    fi
+fi
 
 # added 04/14, 2021. for machine-dependent procedures
 # https://qiita.com/awakia/items/1d5cd440ce58ef4fb8ae
