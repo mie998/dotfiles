@@ -11,21 +11,24 @@ symbol = "➜"     # The "symbol" segment is being set to "➜"
 [git_status]
 disabled = true
 
+[git_branch]
+symbol = "🌱 "
+
 [aws]
-symbol = "☁ "
+symbol = "⛅ "
 
 [golang]
-symbol = "Go! "
+symbol = "🚀 "
 
 [hostname]
 prefix = "⟪"
 suffix = "⟫"
 
 [java]
-symbol = "☕"
+symbol = "☕ "
 
 [python]
-symbol = "⛎"
+symbol = "🐍 "
 
 [ruby]
 symbol = "☪ "
