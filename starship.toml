@@ -5,11 +5,16 @@ add_newline = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are confguring is "character"
-symbol = "➜"     # The "symbol" segment is being set to "➜"
+symbol = "➜ "     # The "symbol" segment is being set to "➜"
 
 # Git status
 [git_status]
-disabled = true
+disabled = false
+style = "bold green"
+conflicted = "🏳 "
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
 
 [git_branch]
 symbol = "🌱 "
@@ -38,4 +43,4 @@ symbol = "⚙️ "
 
 [time]
 disabled = false
-format = "🕙[ %T ]"
+format = "🕙 [ %T ]"
