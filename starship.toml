@@ -39,7 +39,7 @@ symbol = "🐍 "
 symbol = "☪ "
 
 [rust]
-symbol = "⚙️ "
+symbol = "⚙️  "
 
 [time]
 disabled = false
