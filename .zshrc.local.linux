@@ -11,8 +11,12 @@
 # added on 2019/12/5 for pbcopy
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias open="xdg-open"
+alias cat="bat"
+alias exes="exec $SHELL -l"
 
-# added 8/17, 2020 for ros setup
+
+# for ROS setup
 source /opt/ros/melodic/setup.zsh
 source ~/catkin_ws/devel/setup.zsh
 
