@@ -1,0 +1,4 @@
+https://github.com/sharkdp/bat
+https://github.com/sharkdp/pastel
+https://github.com/zsh-users/zaw
+https://github.com/anyenv/anyenv
