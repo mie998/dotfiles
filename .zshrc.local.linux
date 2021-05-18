@@ -11,9 +11,11 @@
 # added on 2019/12/5 for pbcopy
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-alias open="xdg-open"
-alias cat="bat"
 alias exes="exec $SHELL -l"
+alias open="xdg-open"
+
+# https://github.com/sharkdp/bat
+alias cat="bat" 
 
 
 # for ROS setup
