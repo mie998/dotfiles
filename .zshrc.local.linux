@@ -17,7 +17,6 @@ alias open="xdg-open"
 # https://github.com/sharkdp/bat
 alias cat="bat" 
 
-
 # for ROS setup
 source /opt/ros/melodic/setup.zsh
 source ~/catkin_ws/devel/setup.zsh
