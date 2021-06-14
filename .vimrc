@@ -1,4 +1,17 @@
-." setting
+if has('vim_starting')
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" インストールするプラグインをここに記述
+NeoBundle 'easymotion/vim-easymotion'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-commentary'
+
+call neobundle#end()
+NeoBundleCheck
+
 " ファイルタイプ検出
 filetype plugin indent on
 "文字コードをUFT-8に設定
@@ -75,21 +88,15 @@ set wrapscan
 " 検索語をハイライト表示
 set hlsearch
 
-" キーバインド
-" ESC連打でハイライト解除
+let mapleader="\<Space>"
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-" カーソルの回り込みを許可
 set whichwrap=b,s,[,],<,>
-"j連打でエスケープ"
 inoremap <silent> jj <Esc>
-" 入力モードでのカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-" insert mode では emacs系キーバインド
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-a> <Esc> I
 inoremap <C-e> <Esc> A
-
