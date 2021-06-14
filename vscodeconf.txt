@@ -18,33 +18,78 @@
     },
 
     // vscode-vim settings
-    "vim.useSystemClipboard": true, // clipboard を vim と統合
-    "vim.hlsearch": true, // 検索結果をハイライト
-    "vim.visualstar": true, // * や # キーでカーソル配下の文字列を検索する
+    "vim.useSystemClipboard": true, 
+    "vim.hlsearch": true, 
+    "vim.visualstar": true, 
+    "vim.surround": true,
     "vim.leader": "<space>",
-    "editor.lineNumbers": "relative", // 相対行番号
-    "vim.whichwrap": "h,l,<,>,[,]", // 行末からさらに右に移動すると、次の行の先頭に移動するなど
+    "vim.easymotion": true,
+    "vim.camelCaseMotion.enable": true,
+    "editor.lineNumbers": "relative", 
+    "vim.whichwrap": "h,l,<,>,[,]", 
     "vim.handleKeys": {
-        "<C-a>": false,
-        "<C-c>": false,
-        "<C-x>": false,
-        "<C-z>": false,
-        "<C-f>": false,
-        "<C-b>": false
+        "<C-a>": true,
+        "<C-b>": true,
+        "<C-c>": true,
+        "<C-d>": true,
+        "<C-e>": true,
+        "<C-f>": true,
+        "<C-g>": true,
+        "<C-h>": true,
+        "<C-i>": true,
+        "<C-j>": true,
+        "<C-k>": true,
+        "<C-l>": true,
+        "<C-m>": true,
+        "<C-n>": true,
+        "<C-o>": true,
+        "<C-p>": true,
+        "<C-q>": true,
+        "<C-r>": true,
+        "<C-s>": true,
+        "<C-t>": true,
+        "<C-u>": true,
+        "<C-v>": true,
+        "<C-w>": true,
+        "<C-x>": true,
+        "<C-y>": true,
+        "<C-z>": true,
     },
     "vim.normalModeKeyBindingsNonRecursive": [
         {
+            "before": [
+                "u"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
+        },
+        {
             "before": ["J"],
             "after": ["1", "0", "j"]
-        }, //移動を早める
+        }, 
         {
             "before": ["K"],
             "after": ["1", "0", "k"]
-        }, //移動を早める
+        }, 
         {
             "before": ["H"],
             "after": ["0"]
-        }, //端に移動
+        }, 
         {
             "before": ["L"],
             "after": ["$"]
@@ -82,10 +127,32 @@
     "[javascript]": {},
     // global setting for c++
     "[cpp]": {
-        "editor.defaultFormatter": "xaver.clang-format"
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.detectIndentation": false,
+        "editor.tabSize": 4
     },
     // global setting for rust
     "[rust]": {
         "editor.defaultFormatter": "statiolake.vscode-rustfmt"
-    }
+    },
+    // global setting for python
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "remote.SSH.remotePlatform": {
+        "HRI-nishiwaki": "linux"
+    },
+    "C_Cpp.updateChannel": "Insiders",
+    "launch": {
+
+
+        "configurations": [],
+        "compounds": []
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "json.schemas": [],
 }
