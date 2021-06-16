@@ -116,6 +116,7 @@ alias vless='/usr/share/vim/vim82/macros/less.sh'
 alias cp='cp -i'
 alias rm='rm -i'
 # for git commands
+alias gs='git status'
 alias ga='git add'
 alias gaa='git add -A'
 alias gcm='git commit -m'
