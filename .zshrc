@@ -109,7 +109,6 @@ alias ll='ls -l'
 alias gr='grep --color'
 alias vi='vim'
 alias dk='docker'
-alias dkc='docker-compose'
 alias src='source'
 alias vless='/usr/share/vim/vim82/macros/less.sh'
 # secure file system
@@ -126,6 +125,13 @@ gta() {
     git tag -a $version -m $version
 }
 alias gpt='git push --tags'
+# for docker commands
+alias d="docker"
+alias dc="docker-compose"
+alias dcn="docker container"
+alias dim="docker image"
+alias dpa="docker ps -a"
+alias di="docker inspect"
 
 #####################################################
 
