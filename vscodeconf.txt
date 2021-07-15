@@ -134,11 +134,9 @@
     // global setting for JS
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "prettier.tabWidth": 2,
     },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "prettier.tabWidth": 2,
     },
     // global setting for c++
     "[cpp]": {
@@ -147,28 +145,13 @@
         "editor.tabSize": 4
     },
     // global setting for go
-    [go]": {
-        "go.formatOnSave": true
-    },
+    "go.formatOnSave": true,
+    "[go]": {},
     "[rust]": {
         "editor.defaultFormatter": "statiolake.vscode-rustfmt"
     },
     // global setting for python
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
-    },
-    "remote.SSH.remotePlatform": {
-        "HRI-nishiwaki": "linux"
-    },
-    "C_Cpp.updateChannel": "Insiders",
-    "launch": {
-        "configurations": [],
-        "compounds": []
-    },
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "json.schemas": [],
+    }
 }
