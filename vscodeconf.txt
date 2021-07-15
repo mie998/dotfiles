@@ -125,8 +125,6 @@
     ],
 
     // use prettier-vscode as default formatter
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.tabWidth": 4,
     "[json]": {},
     "[markdown]": {
         "editor.formatOnSave": false,
@@ -134,14 +132,24 @@
     },
 
     // global setting for JS
-    "[javascript]": {},
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "prettier.tabWidth": 2,
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "prettier.tabWidth": 2,
+    },
     // global setting for c++
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format",
         "editor.detectIndentation": false,
         "editor.tabSize": 4
     },
-    // global setting for rust
+    // global setting for go
+    [go]": {
+        "go.formatOnSave": true
+    },
     "[rust]": {
         "editor.defaultFormatter": "statiolake.vscode-rustfmt"
     },
@@ -163,14 +171,4 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "json.schemas": [],
-
-    "r.bracketedPaste": true,
-    "r.rterm.linux": "/usr/bin/R",
-    "r.lsp.debug": true,
-    "r.lsp.diagnostics": true,
-    "r.rterm.option": [
-        "--no-save",
-        "--no-restore",
-        "--r-binary=*Path to R executable*"
-    ]
 }
