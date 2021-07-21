@@ -145,8 +145,15 @@
         "editor.tabSize": 4
     },
     // global setting for go
-    "go.formatOnSave": true,
-    "[go]": {},
+    "go.gopath": "$HOME/go",
+    "go.formatOnSave": false,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4, 
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": false,
+        }
+    },
     "[rust]": {
         "editor.defaultFormatter": "statiolake.vscode-rustfmt"
     },
