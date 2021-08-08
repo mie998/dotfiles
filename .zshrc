@@ -132,7 +132,7 @@ alias dcn="docker container"
 alias dim="docker image"
 alias dpa="docker ps -a"
 alias di="docker inspect"
-
+alias exes="exec $SHELL -l"
 #####################################################
 
 #####################################################
