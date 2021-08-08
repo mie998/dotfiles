@@ -1,11 +1,5 @@
-# ~/.config/starship.toml
-
 # Disable the newline at the start of the prompt
 add_newline = false
-
-# Replace the "❯" symbol in the prompt with "➜"
-[character]      # The name of the module we are confguring is "character"
-symbol = "➜ "     # The "symbol" segment is being set to "➜"
 
 # Git status
 [git_status]
@@ -22,12 +16,11 @@ symbol = "🌱 "
 [aws]
 symbol = "⛅ "
 
+[nodejs]
+symbol= "🧤 "
+
 [golang]
 symbol = "🚀 "
-
-[hostname]
-prefix = "⟪"
-suffix = "⟫"
 
 [java]
 symbol = "☕ "
@@ -35,12 +28,10 @@ symbol = "☕ "
 [python]
 symbol = "🐍 "
 
-[ruby]
-symbol = "☪ "
-
 [rust]
 symbol = "⚙️  "
 
 [time]
 disabled = false
-format = "🕙 [ %T ]"
+format = '🕙[\[ $time \]]($style) '
+time_format = "%T"
