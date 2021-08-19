@@ -26,16 +26,6 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias exes="exec $SHELL -l"
 
-# WSL settings
-# https://qiita.com/Engr_Coal33/items/6aabb6932b53bd43b843 for XServer configuration
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
-
-# for replacing wsl2 system deamon with genie
-# https://shikiyura.com/2020/06/execute_systemctl_on_wsl2/
-# if [ "`ps -eo pid,lstart,cmd | grep systemd | grep -v -e grep -e systemd- | sort -n -k2 | awk 'NR==1 { print $1 }'`" != "1" ]; then
-#    genie -s
-# fi
-
 if [ -e "$HOME/.anyenv" ]
 then
     export ANYENV_ROOT="$HOME/.anyenv"
