@@ -107,6 +107,9 @@ alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='ls -l'
 alias gr='grep --color'
+grr = () {
+  grep -r $1 ./* --color
+}
 alias vi='vim'
 alias dk='docker'
 alias src='source'
