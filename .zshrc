@@ -103,7 +103,11 @@ ojt() {
 
 #######################################################
 ### alias
+# for linux
 alias ls='ls --color=auto'
+# for mac
+alias ls='ls -G'
+
 alias la='ls -A'
 alias ll='ls -l'
 alias gr='grep --color'
