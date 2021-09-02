@@ -257,11 +257,14 @@ bindkey '^h' zaw-history
 # added 10/8,2019 for starship
 eval "$(starship init zsh)"
 
-# added 9/2,2020 for zaw-history setup
+########################################## zsh plugins
 # mkdir ~/.zsh_plugins
 # cd .zsh_plugins
 # git clone git://github.com/zsh-users/zaw.git
 source ~/.zsh_plugin/zaw/zaw.zsh
+# https://github.com/marlonrichert/zsh-autocomplete
+source ~/.zsh_plugin/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+########################################## 
 
 # added 10/14, 2019 for java_home settings
 export JAVA_HOME=/usr/lib/jvm/java-13-jdk
