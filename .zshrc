@@ -114,6 +114,9 @@ alias gr='grep --color'
 grr = () {
   grep -r $1 ./* --color
 }
+ggrr = () {
+  git grep --color -r $1 ./* 
+}
 alias vi='vim'
 alias dk='docker'
 alias src='source'
