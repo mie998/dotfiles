@@ -1,164 +1,187 @@
 // Place your settings in this file to overwrite the default settings
 {
-    // common settings
-    "workbench.colorTheme": "Darcula",
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "editor.scrollBeyondLastLine": true,
-    "files.encoding": "utf8", // designate character code for preventing garbling
-    "files.insertFinalNewline": true,
-    "files.autoSave": "onFocusChange",
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "on", // for user snippet, enable tabCompletion
-    "emmet.triggerExpansionOnTab": true, // for user snippet, enable emmetExpantionOnTab
-    "workbench.iconTheme": "vscode-icons",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true
-    },
-
-    // vscode-vim settings
-    "vim.useSystemClipboard": true,
-    "vim.hlsearch": true,
-    "vim.visualstar": true,
-    "vim.gdefault": true,
-    "vim.surround": true,
-    "vim.easymotion": true,
-    "vim.leader": "<space>",
-    "vim.camelCaseMotion.enable": true,
-    "editor.lineNumbers": "relative",
-    "vim.whichwrap": "h,l,<,>,[,]",
-    "vim.handleKeys": {
-        "<C-a>": true,
-        "<C-b>": true,
-        "<C-c>": true,
-        "<C-d>": true,
-        "<C-e>": true,
-        "<C-f>": true,
-        "<C-g>": true,
-        "<C-h>": true,
-        "<C-i>": true,
-        "<C-j>": true,
-        "<C-k>": true,
-        "<C-l>": true,
-        "<C-m>": true,
-        "<C-n>": true,
-        "<C-o>": true,
-        "<C-p>": true,
-        "<C-q>": true,
-        "<C-r>": true,
-        "<C-s>": true,
-        "<C-t>": true,
-        "<C-u>": true,
-        "<C-v>": true,
-        "<C-w>": true,
-        "<C-x>": true,
-        "<C-y>": true,
-        "<C-z>": true
-    },
-    "vim.normalModeKeyBindingsNonRecursive": [
+  // common settings
+  "workbench.colorTheme": "Darcula",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.scrollBeyondLastLine": true,
+  "files.encoding": "utf8", // designate character code for preventing garbling
+  "files.insertFinalNewline": true,
+  "files.autoSave": "onFocusChange",
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on", // for user snippet, enable tabCompletion
+  "emmet.triggerExpansionOnTab": true, // for user snippet, enable emmetExpantionOnTab
+  "workbench.iconTheme": "vscode-icons",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  // vscode-vim settings
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.visualstar": true,
+  "vim.gdefault": true,
+  "vim.surround": true,
+  "vim.easymotion": true,
+  "vim.leader": "<space>",
+  "vim.camelCaseMotion.enable": true,
+  "editor.lineNumbers": "relative",
+  "vim.whichwrap": "h,l,<,>,[,]",
+  "vim.handleKeys": {
+    "<C-a>": true,
+    "<C-b>": true,
+    "<C-c>": true,
+    "<C-d>": true,
+    "<C-e>": true,
+    "<C-f>": true,
+    "<C-g>": true,
+    "<C-h>": true,
+    "<C-i>": true,
+    "<C-j>": true,
+    "<C-k>": true,
+    "<C-l>": true,
+    "<C-m>": true,
+    "<C-n>": true,
+    "<C-o>": true,
+    "<C-p>": true,
+    "<C-q>": true,
+    "<C-r>": true,
+    "<C-s>": true,
+    "<C-t>": true,
+    "<C-u>": true,
+    "<C-v>": true,
+    "<C-w>": true,
+    "<C-x>": true,
+    "<C-y>": true,
+    "<C-z>": true
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["u"],
+      "after": [],
+      "commands": [
         {
-            "before": ["u"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "undo"
-                }
-            ]
-        },
-        {
-            "before": ["<C-r>"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "redo"
-                }
-            ]
-        },
-        {
-            "before": ["J"],
-            "after": ["1", "0", "j"]
-        },
-        {
-            "before": ["K"],
-            "after": ["1", "0", "k"]
-        },
-        {
-            "before": ["H"],
-            "after": ["0"]
-        },
-        {
-            "before": ["L"],
-            "after": ["$"]
-        },
-        {
-            "before": ["<Enter>"],
-            "commands": ["editor.action.insertLineAfter"]
-        },
-        // leader options
-        {
-            "before": ["<leader>", "q"],
-            "commands": ["workbench.action.toggleSidebarVisibility"]
-        },
-        {
-            "before": ["<leader>", "p"],
-            "commands": ["workbench.action.quickOpen"]
-        },
-        {
-            "before": ["<leader>", "w"],
-            "commands": ["CamelCaseMotion_w"]
+          "command": "undo"
         }
-    ],
-    "vim.insertModeKeyBindingsNonRecursive": [
+      ]
+    },
+    {
+      "before": ["<C-r>"],
+      "after": [],
+      "commands": [
         {
-            "before": ["j", "j"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["<C-h>"],
-            "after": ["<Left>"]
-        },
-        {
-            "before": ["<C-l>"],
-            "after": ["<Right>"]
+          "command": "redo"
         }
-    ],
-
-    // use prettier-vscode as default formatter
-    "[json]": {},
-    "[markdown]": {
-        "editor.formatOnSave": false,
-        "editor.formatOnType": false
+      ]
     },
-
-    // global setting for JS
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    {
+      "before": ["J"],
+      "after": ["1", "0", "j"]
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    {
+      "before": ["K"],
+      "after": ["1", "0", "k"]
     },
-    // global setting for c++
-    "[cpp]": {
-        "editor.defaultFormatter": "xaver.clang-format",
-        "editor.detectIndentation": false,
-        "editor.tabSize": 4
+    {
+      "before": ["H"],
+      "after": ["0"]
     },
-    // global setting for go
-    "go.gopath": "$HOME/go",
-    "go.formatOnSave": false,
-    "[go]": {
-        "editor.formatOnSave": true,
-        "editor.tabSize": 4, 
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": false,
-        }
+    {
+      "before": ["L"],
+      "after": ["$"]
     },
-    "[rust]": {
-        "editor.defaultFormatter": "statiolake.vscode-rustfmt"
+    {
+      "before": ["<Enter>"],
+      "commands": ["editor.action.insertLineAfter"]
     },
-    // global setting for python
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
+    // leader options
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["CamelCaseMotion_w"]
     }
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<Left>"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<Right>"]
+    }
+  ],
+  "[json]": {},
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
+  },
+  // global setting for JS
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // global setting for c++
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4
+  },
+  // global setting for go
+  "go.gopath": "$HOME/go",
+  "go.formatOnSave": false,
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false
+    }
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "matklad.rust-analyzer",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 5
+  },
+  // global setting for python
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "sync.gist": "1c1a9224dd682c7b470d624a4f549ac8",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "redhat.telemetry.enabled": false,
+  "settingsSync.ignoredExtensions": [
+    "ms-vscode.cmake-tools",
+    "twxs.cmake",
+    "xaver.clang-format",
+    "ms-toolsai.jupyter",
+    "kleber-swf.unity-code-snippets",
+    "toba.vsfire"
+  ]
 }
