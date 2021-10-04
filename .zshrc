@@ -270,20 +270,9 @@ source ~/.zsh_plugin/zaw/zaw.zsh
 source ~/.zsh_plugin/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 ########################################## 
 
-# added 10/14, 2019 for java_home settings
-export JAVA_HOME=/usr/lib/jvm/java-13-jdk
-
 # added PATH for cargo crates binaries
 export PATH=/home/mie/.cargo/bin:$PATH
-
-# added RUST_TRACEBACK for debug
 export RUST_BACKTRACE=1
-
-# added 12/16 for UnrealEngineEditor
-export PATH=/home/mie/UnrealEngine/Engine/Binaries/Linux/:$PATH
-
-# added 3/11 for nodebrew install (via curl)
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # added 6/20, 2020 for locate command alias
 # for install mlocate, check this site: https://www.tecmint.com/install-locate-command-to-find-files-in-centos/
