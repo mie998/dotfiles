@@ -145,11 +145,11 @@
     "editor.detectIndentation": false,
     "editor.tabSize": 4
   },
-  // global setting for go
+   // global setting for go
   "go.gopath": "$HOME/go",
-  "go.formatOnSave": false,
   "[go]": {
     "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go",
     "editor.tabSize": 4,
     "editor.codeActionsOnSave": {
       "source.organizeImports": false
