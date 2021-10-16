@@ -9,6 +9,7 @@
   "files.insertFinalNewline": true,
   "files.autoSave": "onFocusChange",
   "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnEnter": "off",
   "editor.tabCompletion": "on", // for user snippet, enable tabCompletion
   "emmet.triggerExpansionOnTab": true, // for user snippet, enable emmetExpantionOnTab
   "workbench.iconTheme": "vscode-icons",
