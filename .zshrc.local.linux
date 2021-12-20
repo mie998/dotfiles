@@ -29,6 +29,9 @@ alias exes="exec $SHELL -l"
 # for Deno
 export DENO_INSTALL="/home/mie999/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit
+compinit -u
 
 # for anyenv
 if [ -e "$HOME/.anyenv" ]
