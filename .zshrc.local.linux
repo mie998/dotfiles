@@ -42,5 +42,6 @@ then
 fi
 
 # for asdf
+# ref: https://zenn.dev/noraworld/articles/replace-anyenv-with-asdf
 . $HOME/.asdf/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
