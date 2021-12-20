@@ -26,6 +26,11 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias exes="exec $SHELL -l"
 
+# for Deno
+export DENO_INSTALL="/home/mie999/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# for anyenv
 if [ -e "$HOME/.anyenv" ]
 then
     export ANYENV_ROOT="$HOME/.anyenv"
@@ -35,3 +40,7 @@ then
         eval "$(anyenv init -)"
     fi
 fi
+
+# for asdf
+. $HOME/.asdf/asdf.sh
+fpath=(${ASDF_DIR}/completions $fpath)
