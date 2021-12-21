@@ -48,3 +48,7 @@ fi
 # ref: https://zenn.dev/noraworld/articles/replace-anyenv-with-asdf
 . $HOME/.asdf/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
+
+# https://github.com/zsh-users/zsh-completions
+# Docker for mac: https://chopschips.net/blog/2018/04/17/docker-completion/
+fpath=(~/.zsh/completion/zsh-completions/src $fpath)
