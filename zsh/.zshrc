@@ -68,44 +68,11 @@ ex ()
   fi
 }
 
-# fuction for c++ competitive programming
-cout() {
-    filename=$1
-    g++ -Wall -ggdb3 -fsanitize=undefined -D_GLIBCXX_DEBUG -std=c++17 $1
-    ./a.out < ~/Work/purokon/etc/input.txt
-    rm -f a.out
-}
-
-# function for python competitive programming
-pyout() {
-    filename=$1
-    python $1 < ~/Work/purokon/etc/input.txt
-}
-
-# function for online-judge-tools
-ojd() {
-    # download
-    if [ -e test/ ]; then
-        rm -rf test/
-    fi
-    url=$1
-    oj download $url
-}
-
-ojt() {
-    # test
-    filename=$1
-    g++ -Wall -std=c++17 $filename
-    oj t 
-    rm -f a.out
-}
-#######################################################
-
 #######################################################
 ### alias
-# for linux
+# for linux coloring 'ls' 
 alias ls='ls --color=auto'
-# for mac
+# for OSX coloring 'ls' 
 alias ls='ls -G'
 
 alias la='ls -A'
@@ -118,12 +85,13 @@ ggrr = () {
   git grep --color -r $1 ./* 
 }
 alias vi='vim'
-alias dk='docker'
 alias src='source'
 alias vless='/usr/share/vim/vim82/macros/less.sh'
 # secure file system
 alias cp='cp -i'
 alias rm='rm -i'
+alias exes="exec $SHELL -l"
+
 # for git commands
 alias gs='git status'
 alias ga='git add'
@@ -137,14 +105,15 @@ gta() {
     git tag -a $version -m $version
 }
 alias gpt='git push --tags'
+
 # for docker commands
 alias d="docker"
+alias dk='docker'
 alias dc="docker-compose"
 alias dcn="docker container"
 alias dim="docker image"
 alias dpa="docker ps -a"
 alias di="docker inspect"
-alias exes="exec $SHELL -l"
 #####################################################
 
 #####################################################
