@@ -12,10 +12,10 @@ toggle_key: OFF
 
 matches:
   - trigger: ";id"
-    replace: "NagayamaRyogas"
+    replace: "mie998"
 
   - trigger: ";mail"
-    replace: "nagayama15@sec.is.kit.ac.jp"
+    replace: "nishiwaki.kyoto@gmail.com"
 
   - trigger: ";gh"
     replace: "github.com"
