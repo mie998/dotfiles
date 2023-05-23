@@ -6,7 +6,6 @@ jobs:
   ubuntu:
     name: Ubuntu
     runs-on: ubuntu-latest
-
     steps:
       - name: Setup
         run: curl -sL https://mie998.github.io/dotfiles/install.sh | sh
