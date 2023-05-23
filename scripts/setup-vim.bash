@@ -16,7 +16,7 @@ fi
 # cf. https://github.com/junegunn/vim-plug/wiki/tutorial
 # for vim
 export VIM_PLUG_PATH="$XDG_DATA_HOME/.vim/autoload/plug.vim"
-if [ -f "$VIM_PLUG_PATH"]; then
+if [ -f "$VIM_PLUG_PATH" ]; then
     echo "vim-plug for vim is already installed."
 else
     echo "Installing vim-plug..."
