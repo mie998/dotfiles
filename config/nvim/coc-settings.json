@@ -1,0 +1,134 @@
+{
+  "suggest.autoTrigger": "always",
+  "suggest.asciiCharactersOnly": true,
+  "suggest.snippetIndicator": "~",
+  "suggest.languageSourcePriority": 200,
+  "suggest.noselect": true,
+  "suggest.enablePreselect": false,
+  "suggest.completionItemKindLabels": {
+    "text": "󾪓 ",
+    "method": "󾪌 ",
+    "function": "󾪌 ",
+    "constructor": "󾪌 ",
+    "field": "󾭟 ",
+    "variable": "󾪈 ",
+    "class": "󾭛 ",
+    "interface": "󾭡 ",
+    "module": "󾪋 ",
+    "property": "󾭥 ",
+    "unit": "󾪖 ",
+    "value": "󾪕 ",
+    "enum": "󾪕 ",
+    "keyword": "󾭢 ",
+    "snippet": "󾩻 ",
+    "color": "󾭜 ",
+    "file": "󾩻 ",
+    "reference": "󾪔 ",
+    "folder": "󾪃 ",
+    "enumMember": "󾪕 ",
+    "constant": "󾭝 ",
+    "struct": "󾪑 ",
+    "event": "󾪆 ",
+    "operator": "󾭤 ",
+    "typeParameter": "󾪒 ",
+    "default": "  "
+  },
+  "hover.floatConfig": {
+    "border": true,
+    "highlight": "CocHoverFloating",
+    "winblend": 10
+  },
+  "suggest.floatConfig": {
+    "border": true,
+    "highlight": "CocSuggestFloating",
+    "winblend": 10
+  },
+  "diagnostic.floatConfig": {
+    "border": true,
+    "highlight": "CocDiagnosticFloating",
+    "winblend": 10
+  },
+  "signature.floatConfig": {
+    "border": true,
+    "highlight": "CocSignatureFloating",
+    "winblend": 10
+  },
+  "dialog.floatHighlight": "CocFloating",
+  "dialog.floatBorderHighlight": "CocFloating",
+  "coc.source.around.shortcut": "around",
+  "coc.source.buffer.shortcut": "buffer",
+  "coc.source.word.shortcut": "word",
+  "coc.source.file.shortcut": "file",
+  "copilot.priority": 1000,
+  "coc.source.ultisnips-select.priority": 500,
+  "tabnine.shortcut": "tabnine",
+  "tabnine.priority": 100,
+  "diagnostic.messageTarget": "float",
+  "diagnostic.checkCurrentLine": false,
+  "diagnostic.messageDelay": 0,
+  "diagnostic.errorSign": "󾪇",
+  "diagnostic.warningSign": "󾩬",
+  "diagnostic.infoSign": "󾩴",
+  "diagnostic.hintSign": "󾩳",
+  "coc.preferences.useQuickfixForLocations": false,
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "diagnostic.locationlistUpdate": false,
+  "prettier.disableLanguages": [
+    "markdown"
+  ],
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+  "deno.unstable": true,
+  "deno.codeLens.implementations": true,
+  "deno.codeLens.references": true,
+  "deno.codeLens.referencesAllFunctions": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "prettier.onlyUseLocalVersion": true,
+  "prettier.statusItemText": "",
+  "Lua.diagnostics.globals": [
+    "vim"
+  ],
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.telemetry.enable": true,
+  "rust-analyzer.procMacro.enable": true,
+  "json.schemas": [
+    {
+      "url": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/api/json/catalog.json",
+      "fileMatch": [
+        "/*"
+      ]
+    }
+  ],
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/api/json/catalog.json": "/*",
+    "https://raw.githubusercontent.com/docker/cli/master/cli/compose/schema/data/config_schema_v3.9.json": [
+      "/docker-compose.yml"
+    ]
+  },
+  "prisma.prismaFmtBinPath": "",
+  "cSpell.showStatus": false,
+  "cSpell.diagnosticLevel": "Hint",
+  "cSpell.enabledLanguageIds": [
+    "vim",
+    "css",
+    "git-commit",
+    "go",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "python",
+    "ruby",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact",
+    "yaml"
+  ]
+}
