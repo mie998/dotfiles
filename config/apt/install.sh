@@ -23,7 +23,6 @@ apt-get install -y \
     neovim \
     python3 \
     python3-pip \
-    python3-pynvim \
     shellcheck \
     sqlite3 \
     tmux \
