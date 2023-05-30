@@ -29,5 +29,6 @@ if [ -f "$XDG_DATA_HOME/nvim/site/autoload/plug.vim" ]; then
     echo "vim-plug for neovim is already installed."
 else
     echo "create a symlink of vim-plug for neovim..."
+    mkdir -p "$XDG_DATA_HOME/nvim/site/autoload"
     ln -s "$VIM_PLUG_PATH" "$XDG_DATA_HOME/nvim/site/autoload/plug.vim"
 fi
