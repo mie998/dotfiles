@@ -3,7 +3,12 @@ INSTALL_DIR="${INSTALL_DIR:-$HOME/Work/dotfiles}"
 
 if [ -d "$INSTALL_DIR" ]; then
     echo "Updating dotfiles..."
+
+    cd "$INSTALL_DIR"
     pwd
+    ls -a
+    git status
+
     git -C "$INSTALL_DIR" pull
 else
     echo "Installing dotfiles..."
