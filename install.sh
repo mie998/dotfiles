@@ -7,6 +7,7 @@ if [ -d "$INSTALL_DIR" ]; then
     if ! git -C "$INSTALL_DIR" pull
     then
         echo "Removing unnecessary directory and renewing dotfiles directory..."
+        cd "$HOME/Work"
         rm -rf "$INSTALL_DIR"
         git clone https://github.com/mie998/dotfiles "$INSTALL_DIR"
     fi
