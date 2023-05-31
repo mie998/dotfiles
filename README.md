@@ -5,7 +5,7 @@
 ![](https://github.com/mie998/dotfiles/workflows/Lint/badge.svg)
 
 ## Installation
-(this script in not working now)
+
 ```shell
 $ curl -sL https://mie998.github.io/dotfiles/install.sh | sh
 ```
