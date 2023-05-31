@@ -17,5 +17,5 @@ fi
 
 # shellcheck source=/dev/null
 source "$CARGO_HOME/env"
-sudo /bin/sh "$REPO_DIR/config/cargo/install.sh"
+sudo PATH="$CARGO_HOME/bin:$PATH" /bin/sh "$REPO_DIR/config/cargo/install.sh"
 
