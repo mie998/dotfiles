@@ -15,17 +15,11 @@ export RUST_BACKTRACE=1
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
+### starship ###
+
 ### Go ###
 export GOPATH="$XDG_DATA_HOME/go"
 export GO111MODULE="on"
 
 ### Deno ###
 export DENO_INSTALL="$XDG_DATA_HOME/deno"
-
-### Rubygems ###
-export GEM_HOME="$XDG_DATA_HOME/gem"
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
-
-export BUNDLE_USER_HOME="$XDG_CONFIG_HOME/bundle"
-export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
-export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle/plugin"

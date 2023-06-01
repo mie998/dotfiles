@@ -1,7 +1,9 @@
 #!/bin/sh
 cargo install \
-    exa \
+    alacritty \
     bat \
+    cargo-compete \
+    exa \
     fd-find \
     git-delta \
     gitui \
@@ -14,5 +16,4 @@ cargo install \
     starship \
     tokei \
     xh \
-    zoxide \
-    cargo-compete
+    zoxide
