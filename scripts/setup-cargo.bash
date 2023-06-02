@@ -13,8 +13,6 @@ if [ -d "$RUSTUP_HOME" ] && [ -d "$CARGO_HOME" ]; then
 else
     echo "Installing rustc and cargo..."
     RUSTUP_HOME=$RUSTUP_HOME CARGO_HOME=$CARGO_HOME curl https://sh.rustup.rs -sSf | sh -s -- -y
-    rustup install stable
-    rustup default stable
 fi
 
 # shellcheck source=/dev/null

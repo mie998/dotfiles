@@ -1,4 +1,8 @@
 #!/bin/sh
+rustup install stable
+rustup default stable
+
+cargo update
 cargo install \
     alacritty \
     bat \

@@ -8,8 +8,10 @@ source "${ZINIT[HOME_DIR]}/bin/zinit.zsh"
 typeset -U path
 typeset -U fpath
 
+# !BUG: path の読み込み上手くいってなさそう
 path=(
     "$HOME/.local/bin"(N-/)
+    "$RUSTUP_HOME/bin"(N-/)
     "$CARGO_HOME/bin"(N-/)
     "$GOPATH/bin"(N-/)
     "$DENO_INSTALL/bin"(N-/)
