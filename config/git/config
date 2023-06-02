@@ -4,7 +4,6 @@
 
 [init]
     defaultBranch = main
-    templateDir = ~/.config/git/template
 
 [status]
     showUntrackedFiles = all
@@ -12,7 +11,6 @@
 [commit]
     verbose = true
     gpgSign = false # overwritten in conf.d/local.conf
-    template = .git/commit-template.txt
 
 [diff]
     algorithm = histogram
