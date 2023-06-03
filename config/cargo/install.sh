@@ -5,6 +5,9 @@ rustup default stable
 cargo update
 cargo install \
     alacritty \
+    cargo-binstall
+
+cargo binstall -y \
     bat \
     cargo-compete \
     exa \
@@ -18,6 +21,7 @@ cargo install \
     ripgrep \
     sd \
     starship \
+    tealdeer \
     tokei \
     xh \
     zoxide

@@ -154,7 +154,6 @@ export FZF_DEFAULT_COMMAND='fd --hidden --color=always'
 
 ### bat ###
 export MANPAGER="sh -c 'col -bx | bat --color=always --language=man --plain'"
-
 alias cat='bat --paging=never'
 alias batman='bat --language=man --plain'
 
@@ -254,7 +253,6 @@ export ZENO_ENABLE_SOCK=1
 # export ZENO_DISABLE_BUILTIN_COMPLETION=1
 export ZENO_GIT_CAT="bat --color=always"
 export ZENO_GIT_TREE="exa --tree"
-
 __zeno_atload() {
     if [[ -n $ZENO_LOADED ]]; then
         bindkey ' '  zeno-auto-snippet
@@ -262,7 +260,6 @@ __zeno_atload() {
         bindkey '^P' zeno-completion
     fi
 }
-
 zinit wait lucid light-mode for \
     atload'__zeno_atload' \
     @'yuki-yano/zeno.zsh'
@@ -301,18 +298,7 @@ zinit wait lucid light-mode for \
     @'momo-lab/zsh-replace-multiple-dots'
 
 ### tealdeer ###
-__tealdeer_atclone() {
-    curl -sSL 'https://raw.githubusercontent.com/dbrgn/tealdeer/main/completion/zsh_tealdeer' -o _tealdeer
-}
-__tealdeer_atload() {
-    export TEALDEER_CONFIG_DIR="$XDG_CONFIG_HOME/tealdeer"
-    export TEALDEER_CACHE_DIR="$XDG_CACHE_HOME/tealdeer"
-}
-zinit wait lucid light-mode as'program' from'gh-r' for \
-    mv'tealdeer* -> tldr' \
-    atclone'__tealdeer_atclone' atpull'%atclone' \
-    atload'__tealdeer_atload' \
-    @'dbrgn/tealdeer'
+export TEALDEER_CONFIG_DIR="$XDG_CONFIG_HOME/tealdeer"
 
 ### chpwd-recent-dirs ###
 add-zsh-hook chpwd chpwd_recent_dirs
