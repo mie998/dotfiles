@@ -1,34 +1,20 @@
 #!/usr/bin/env bash
+
+# NOTICE: nvim will be installed via https://crates.io/crates/bob-nvim
+# NOTICE: with ubuntu apt package manager, only old version is able to installed.
+# NOTICE: please watch to call this script after cargo-setup.bash
+export BOB_HOME="$XDG_DATA_HOME/bob"
+
 set -x
 # shellcheck source=./scripts/common.bash
 source "$(dirname "$0")/common.bash"
 
-# Install molokai theme for vim
-if [ -d "$XDG_DATA_HOME/.vim/colors/molokai" ]; then
-    echo "vim molokai theme is already installed."
-else
-    mkdir -p "$XDG_DATA_HOME/.vim/colors/molokai"
-    echo "Installing vim molokai theme..."
-    git clone https://github.com/tomasr/molokai "$XDG_DATA_HOME/.vim/colors/molokai"
-fi
+export NVIM_PATH="$BOB_HOME/nvim-bin"
 
-# setting up vim-plug
-# cf. https://github.com/junegunn/vim-plug/wiki/tutorial
-# for vim
-export VIM_PLUG_PATH="$XDG_DATA_HOME/.vim/autoload/plug.vim"
-if [ -f "$VIM_PLUG_PATH" ]; then
-    echo "vim-plug for vim is already installed."
+if [ -d "$NVIM_PATH/nvim" ]; then
+    echo "neovim is already installed via cargo-bob."
 else
-    echo "Installing vim-plug..."
-    curl -fLo "$VIM_PLUG_PATH" --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-# for neovim use just a symlink
-if [ -f "$XDG_DATA_HOME/nvim/site/autoload/plug.vim" ]; then
-    echo "vim-plug for neovim is already installed."
-else
-    echo "create a symlink of vim-plug for neovim..."
-    mkdir -p "$XDG_DATA_HOME/nvim/site/autoload"
-    ln -s "$VIM_PLUG_PATH" "$XDG_DATA_HOME/nvim/site/autoload/plug.vim"
+    echo "start install neovim via cargo-bob"
+    bob install stable
+    bob use stable
 fi

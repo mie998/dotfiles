@@ -1,20 +1,23 @@
-if vim.env.LSP == nil then
-  vim.env.LSP = 'nvim'
-  -- vim.env.LSP = 'coc'
+if vim.loader and vim.fn.has "nvim-0.9.1" == 1 then vim.loader.enable() end
+
+for _, source in ipairs {
+  "astronvim.bootstrap",
+  "astronvim.options",
+  "astronvim.lazy",
+  "astronvim.autocmds",
+  "astronvim.mappings",
+} do
+  local status_ok, fault = pcall(require, source)
+  if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
 end
 
-if vim.env.NVIM_COLORSCHEME == nil then
-  -- vim.env.NVIM_COLORSCHEME = 'gruvbox-material'
-  vim.env.NVIM_COLORSCHEME = 'catppuccin'
+if astronvim.default_colorscheme then
+  if not pcall(vim.cmd.colorscheme, astronvim.default_colorscheme) then
+    require("astronvim.utils").notify(
+      "Error setting up colorscheme: " .. astronvim.default_colorscheme,
+      vim.log.levels.ERROR
+    )
+  end
 end
 
-require('rc.plugin_manager').lazy_init()
-require('rc.preload')
--- NOTE: lazy.nvim auto load lua/plugins/config.lua
---       unnecessary `require('plugins/config')`
---       config.lua load base settings with cache. (from lazy.nvim)
---         - lua/options.lua
---         - lua/func.lua
---         - lua/highlight.lua
-require('rc.plugin_manager').lazy_setup()
-require('rc.postload')
+require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)

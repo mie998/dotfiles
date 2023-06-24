@@ -19,7 +19,6 @@ apt-get install -y \
     jq \
     libsqlite3-dev \
     libssl-dev \
-    neovim \
     python3 \
     python3-pip \
     shellcheck \
