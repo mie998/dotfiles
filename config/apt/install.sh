@@ -1,7 +1,9 @@
 #!/bin/sh -e
 ubuntu_version="$(lsb_release -r | awk '{print $2 * 100}')"
 
-add-apt-repository -y ppa:git-core/ppa
+add-apt-repository -y \
+    ppa:git-core/ppa \
+    universe
 apt-get update
 apt-get upgrade -y
 apt-get install -y \
