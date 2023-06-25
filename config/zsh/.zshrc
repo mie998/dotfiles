@@ -165,3 +165,6 @@ zinit wait lucid null for \
 ### starship ###
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+
+### disable beep for wsl ###
+unsetopt BEEP
