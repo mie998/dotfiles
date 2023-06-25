@@ -9,7 +9,6 @@ cargo install \
 
 cargo binstall -y \
     bat \
-    bob-nvim \
     cargo-compete \
     exa \
     fd-find \
