@@ -20,4 +20,4 @@ fi
 mkdir -p ~/.config/nvim
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 git submodule update --init --recursive
-ln -sfnv "$XDG_CONFIG_HOME/nvim/lua/user" "$HOME/.config/nvim/lua/user"
+ln -sfnv "$REPO_DIR/config/nvim/lua/user/" "$HOME/.config/nvim/lua/user"
