@@ -17,7 +17,11 @@ fi
 #NOTICE: if you are using wsl2, install font on windows side and setting from right clicking wsl2 panel.
 
 # install AstroNvim and setting its user config
-mkdir -p ~/.config/nvim
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-git submodule update --init --recursive
-ln -sfnv "$REPO_DIR/config/nvim/lua/user/" "$HOME/.config/nvim/lua/user"
+mkdir -p "$XDG_CONFIG_HOME/nvim"
+if [ ! -d "$XDG_CONFIG_HOME/nvim/AstroNvim" ]; then
+    git clone --depth 1 https://github.com/AstroNvim/AstroNvim "$XDG_CONFIG_HOME/nvim"
+fi
+if [ ! -d "$XDG_CONFIG_HOME/nvim/lua/user" ]; then
+    git submodule update --init --recursive
+    ln -sfnv "$REPO_DIR/config/nvim/lua/user" "$XDG_CONFIG_HOME/nvim/lua/user"
+fi
