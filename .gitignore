@@ -6,3 +6,5 @@ local.*
 ### Zsh cache ###
 *.zwc
 .zcomp*
+.zsh_sessions
+.zsh_history
