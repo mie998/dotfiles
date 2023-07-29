@@ -26,6 +26,7 @@ defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)
 # Mission Control
 defaults write com.apple.dock wvous-br-corner -int 4 # Bottom right -> Desktop
 defaults write com.apple.dock mru-spaces -bool false # Don't automatically rearrange spaces
+defaults write com.apple.dock mcx-expose-disabled -bool TRUE # disable mission Control
 
 # Disable .DS_Store on network disks
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
