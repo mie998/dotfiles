@@ -845,6 +845,8 @@ key_bindings:
   - { key: End, chars: "\x1bOF", mode: AppCursor }
   - { key: End, chars: "\x1b[F", mode: ~AppCursor }
   - { key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt }
+  - { key: Up, mods: Control, action: ScrollPageUp }
+  - { key: Down, mods: Control, action: ScrollPageUp }
   - { key: PageUp, mods: Shift, chars: "\x1b[5;2~", mode: Alt }
   - { key: PageUp, mods: Control, chars: "\x1b[5;5~" }
   - { key: PageUp, mods: Alt, chars: "\x1b[5;3~" }
