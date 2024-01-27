@@ -1,15 +1,12 @@
-#!/bin/sh
-rustup install stable
-rustup default stable
+#!/usr/bin/env bash
+set -eux
 
-cargo update
 cargo install \
-    alacritty \
     cargo-binstall
 
 cargo binstall -y \
     bat \
-    cargo-compete \
+    cargo-update \
     exa \
     fd-find \
     git-delta \

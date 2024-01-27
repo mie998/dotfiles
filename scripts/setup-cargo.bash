@@ -15,8 +15,5 @@ else
     RUSTUP_HOME=$RUSTUP_HOME CARGO_HOME=$CARGO_HOME curl https://sh.rustup.rs -sSf | sh -s -- -y
 fi
 
-# shellcheck source=/dev/null
-source "$CARGO_HOME/env"
-
-# sudo PATH="$CARGO_HOME/bin:$PATH" /bin/sh "$REPO_DIR/config/cargo/install.sh"
+/bin/bash "$REPO_DIR/config/cargo/install.bash"
 
