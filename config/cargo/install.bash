@@ -18,6 +18,7 @@ cargo binstall -y \
     ripgrep \
     sd \
     starship \
+    sheldon \
     tealdeer \
     tokei \
     xh \
