@@ -12,9 +12,52 @@
 
 shell = "zsh"
 
-[plugins]
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
 
-# For example:
-#
-# [plugins.base16]
-# github = "chriskempson/base16-shell"
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[plugins.zsh-completions]
+github = 'zsh-users/zsh-completions'
+apply = ["defer"]
+
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+apply = ["defer"]
+
+[plugins.zsh-autopair]
+github = "hlissner/zsh-autopair"
+apply = ["defer"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ["defer"]
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+apply = ["defer"]
+
+[plugins.mmv]
+github = "itchyny/mmv"
+apply = ["defer"]
+
+[plugins.asdf]
+github = "asdf-vm/asdf"
+apply = ["defer"]
+
+[plugins.navi]
+github = "denisidoro/navi"
+apply = ["defer"]
+
+[plugins.zeno]
+github = "yuki-yano/zeno.zsh"
+apply = ["defer"]
+
+[plugins.emojify]
+github = "mrowa44/emojify"
+apply = ["defer"]
+
+[plugins.zsh-replace-multiple-dots]
+github = "momo-lab/zsh-replace-multiple-dots"
+apply = ["defer"]
