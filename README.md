@@ -11,5 +11,5 @@ $ curl -sL https://mie998.github.io/dotfiles/install.sh | sh
 ```
 
 ## respect
-https://github.com/NagayamaRyoga/dotfiles
-https://github.com/yuki-yano/dotfiles
+* https://github.com/NagayamaRyoga/dotfiles
+* https://github.com/yuki-yano/dotfiles
