@@ -14,7 +14,6 @@ Jetpack 'Tani/vim-jetpack'
 Jetpack 'junegunn/fzf.vim'
 Jetpack 'junegunn/fzf', { 'do': {-> fzf#install()} }
 Jetpack 'vlime/vlime', { 'rtp': 'vim' }
-Jetpack 'dracula/vim', { 'as': 'dracula' }
 Jetpack 'tpope/vim-fireplace', { 'for': 'clojure' }
 Jetpack 'easymotion/vim-easymotion'
 Jetpack 'tpope/vim-surround'
