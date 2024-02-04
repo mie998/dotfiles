@@ -1,19 +1,26 @@
-
 syntax on
 filetype plugin on
 
-if has('vim_starting')
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
+""" setting up jetpack.vim """
+let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+if !filereadable(s:jetpackfile)
+  call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+packadd vim-jetpack
+call jetpack#begin()
+Jetpack 'Tani/vim-jetpack'
+Jetpack 'junegunn/fzf.vim'
+Jetpack 'junegunn/fzf', { 'do': {-> fzf#install()} }
+Jetpack 'vlime/vlime', { 'rtp': 'vim' }
+Jetpack 'dracula/vim', { 'as': 'dracula' }
+Jetpack 'tpope/vim-fireplace', { 'for': 'clojure' }
+Jetpack 'easymotion/vim-easymotion'
+Jetpack 'tpope/vim-surround'
+Jetpack 'tpope/vim-commentary'
+call jetpack#end()
 
-NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-commentary'
-
-call neobundle#end()
-NeoBundleCheck
 
 """ Options """
 set fenc=utf-8
@@ -63,7 +70,7 @@ set wildmenu
 set wildmode=longest:full,full
 
 " .viminfo
-set viminfo+=n~/.local/share/vim/viminfo
+" set viminfo+=n~/.local/share/vim/viminfo
 
 """ Keymaps """
 nnoremap <silent>j      gj
