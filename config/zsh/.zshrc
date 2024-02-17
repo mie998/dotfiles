@@ -399,9 +399,10 @@ alias gs='git status'
 alias ga='git add'
 alias gaa='git add -A'
 alias gcm='git commit -m'
+alias gcam='git commit --amend -m'
 alias glog='git log --oneline --decorate --graph'
 alias gp='git push'
-alias gch='git switch'
+alias gsw='git switch'
 gta() {
     version=$1
     git tag -a $version -m $version
