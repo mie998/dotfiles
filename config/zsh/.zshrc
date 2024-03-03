@@ -37,7 +37,7 @@ setopt PRINT_EIGHT_BIT
 setopt NO_FLOW_CONTROL
 zshaddhistory() {
     local line="${1%%$'\n'}"
-    [[ ! "$line" =~ "^(cd|history|jj?|lazygit|la|ll|ls|rm|rmdir|trash)($| )" ]]
+    [[ ! "$line" =~ "^(cd|history|jj?|la|ll|ls|rm|rmdir|trash)($| )" ]]
 }
 bindkey "${terminfo[kcuu1]}" history-substring-search-up   # arrow-up
 bindkey "${terminfo[kcud1]}" history-substring-search-down # arrow-down
@@ -405,6 +405,8 @@ alias gcam='git commit --amend -m'
 alias glog='git log --oneline --decorate --graph'
 alias gp='git push'
 alias gsw='git switch'
+alias gb='git branch'
+alias gpo='git push origin "$(git symbolic-ref --short HEAD)"'
 gta() {
     version=$1
     git tag -a $version -m $version
