@@ -7,7 +7,7 @@ cargo install \
 cargo binstall -y \
     bat \
     cargo-update \
-    exa \
+    eza \
     fd-find \
     git-delta \
     gitui \

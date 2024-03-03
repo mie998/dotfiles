@@ -346,6 +346,8 @@ cmaket() { ctest --verbose --test-dir "${1:-$(git rev-parse --show-toplevel)/bui
 export TEALDEER_CONFIG_DIR="$XDG_CONFIG_HOME/tealdeer"
 
 ### exa ###
+# exa is currently maintained. currently using eza for substitution.
+alias exa="eza"
 alias ls='exa --group-directories-first'
 alias la='exa --group-directories-first -a'
 alias ll='exa --group-directories-first -al --header --color-scale --git --icons --time-style=long-iso'
