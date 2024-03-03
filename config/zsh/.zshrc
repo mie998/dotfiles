@@ -11,10 +11,17 @@ path=(
     "$path[@]"
 )
 
+### compinit ###
 fpath=(
     "$XDG_DATA_HOME/zsh/completions"(N-/)
     "$fpath[@]"
 )
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompcache"
+autoload -Uz compinit && compinit
+
+### autoloads ###
+autoload -Uz cdr
+autoload -Uz chpwd_recent_dirs
 
 ### history ###
 export HISTFILE="$XDG_STATE_HOME/zsh_history"
@@ -396,6 +403,9 @@ if [[ -n $ZENO_LOADED ]]; then
     bindkey '^P' zeno-completion
 fi
 
+### zoxide ###
+eval "$(zoxide init zsh)"
+
 ### git ###
 alias gs='git status'
 alias ga='git add'
@@ -497,6 +507,3 @@ if [ -f "$ZDOTDIR/.zshrc.local" ]; then
     source "$ZDOTDIR/.zshrc.local"
 fi
 
-### autoloads ###
-autoload -Uz cdr
-autoload -Uz chpwd_recent_dirs
