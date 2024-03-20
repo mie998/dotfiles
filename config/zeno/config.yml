@@ -393,18 +393,6 @@ completions:
       --preview: fzf-preview-directory {}
     callback: sed -E 's/ /\\ /g; s,/?$,/,'
 
-  # asdf
-  - name: asdf
-    patterns:
-      - ^\s*(asdf)\s+$
-    sourceCommand: >
-      (
-      "$ZENO_HOME/scripts/options.zsh" "asdf/subcommands" "\ufb32" "command" "yellow";
-      "$ZENO_HOME/scripts/options.zsh" "asdf/options" "\uf73a" "option" "blue";
-      )
-    options: *format-options
-    callback: awk '{ print $3 }'
-
   # curl
   - name: curl
     patterns:
