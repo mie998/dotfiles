@@ -15,6 +15,7 @@ cargo binstall -y \
     hexyl \
     hyperfine \
     lsd \
+    mise \
     ripgrep \
     sd \
     starship \
