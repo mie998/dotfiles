@@ -21,3 +21,8 @@ export GO111MODULE="on"
 
 ### Deno ###
 export DENO_INSTALL="$XDG_DATA_HOME/deno"
+
+### mise ###
+export MISE_DATA_DIR="$XDG_DATA_HOME/mise"
+export MISE_INSTALL_PATH="$MISE_DATA_DIR/bin/mise"
+export MISE_CACHE_DIR="$XDG_CACHE_HOME/mise"

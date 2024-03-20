@@ -473,11 +473,7 @@ alias -s zip=unzip
 alias -s d=rdmd
 
 ### mise-vm ###
-eval "$($(which mise) activate zsh)"
-MISE_COMPLETION_FILE=$ZSH_COMPLETION_DIR/_mise
-if [ ! -f $MISE_COMPLETION_FILE ]; then
-  mise completion zsh > $MISE_COMPLETION_FILE
-fi
+eval "$($MISE_INSTALL_PATH activate zsh)"
 
 ### Node.js ###
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_history"
