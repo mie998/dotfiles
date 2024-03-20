@@ -12,8 +12,9 @@ path=(
 )
 
 ### compinit ###
+export ZSH_COMPLETION_DIR="$XDG_DATA_HOME/zsh/completions"
 fpath=(
-    "$XDG_DATA_HOME/zsh/completions"(N-/)
+    "$ZSH_COMPLETION_DIR"(N-/)
     "$fpath[@]"
 )
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompcache"
@@ -471,9 +472,8 @@ alias -s {bz2,gz,tar,xz}='tar xvf'
 alias -s zip=unzip
 alias -s d=rdmd
 
-### asdf-vm ###
-export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
-export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf/asdfrc"
+### mise-vm ###
+eval "$($MISE_INSTALL_PATH activate zsh)"
 
 ### Node.js ###
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_history"

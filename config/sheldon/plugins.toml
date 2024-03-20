@@ -46,10 +46,6 @@ apply = ["defer"]
 github = "itchyny/mmv"
 apply = ["defer"]
 
-[plugins.asdf]
-github = "asdf-vm/asdf"
-apply = ["defer"]
-
 [plugins.navi]
 github = "denisidoro/navi"
 apply = ["defer"]
