@@ -20,6 +20,7 @@
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "e9062e2dfb9854e6a927370f2d720de354c88524" },
   "nvim-web-devicons": { "branch": "master", "commit": "efbfed0567ef4bfac3ce630524a0f6c8451c5534" },
   "nvim-yati": { "branch": "main", "commit": "ff1e8d1340d266183c1ee41861e1fd3e742226ac" },
+  "oil.nvim": { "branch": "master", "commit": "e462a3446505185adf063566f5007771b69027a1" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "telescope-coc.nvim": { "branch": "master", "commit": "96cd72d1e246faf16ef90a6f602330d1d03a446a" },
   "telescope-frecency.nvim": { "branch": "master", "commit": "4f3e007ec28eb248811f9d7074315fe1f8852199" },
