@@ -1,5 +1,9 @@
 vim.cmd("autocmd!")
 
+-- leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- esc
 vim.keymap.set("i", "jj", "<Esc>")
 
