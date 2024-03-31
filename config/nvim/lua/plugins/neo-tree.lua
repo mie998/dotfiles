@@ -1,3 +1,5 @@
+vim.keymap.set('n', '<leader>q', '<Cmd>Neotree toggle<CR>')
+
 return {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
