@@ -17,6 +17,16 @@ vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup({
     -- color theme
     require("plugins.everforest"),
+    {
+      "folke/tokyonight.nvim",
+      opts = {
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
+        },
+      },
+    },
 
     -- Common Plugin(Lua)
     'nvim-lua/plenary.nvim',
