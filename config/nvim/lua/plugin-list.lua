@@ -62,6 +62,10 @@ require("lazy").setup({
     {'tpope/vim-fugitive'},
     {'lewis6991/gitsigns.nvim'},
     require("plugins.markdown-preview"),
+  -- LSP
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
+  { "neovim/nvim-lspconfig" },
 
     -- terminal Integration
     { 'akinsho/toggleterm.nvim'},
