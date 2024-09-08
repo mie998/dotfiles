@@ -3,5 +3,6 @@
 {
   "files.associations": {
     "*.zshrc.lazy": "shellscript"
-  }
+  },
+  "Lua.diagnostics.globals": ["vim"]
 }
