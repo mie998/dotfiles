@@ -6,6 +6,9 @@ jobs:
   ubuntu:
     name: Ubuntu
     runs-on: ubuntu-latest
+    concurrency:
+      group: ubuntu-setup
+      cancel-in-progress: true
     steps:
       - name: Setup
         run: curl -sL https://mie998.github.io/dotfiles/install.sh | sh
