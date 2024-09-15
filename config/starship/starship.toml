@@ -14,7 +14,13 @@ behind = "⇣${count}"
 symbol = "🌱 "
 
 [aws]
-symbol = "⛅ "
+disabled=true
+
+[gcloud]
+disabled=true
+
+[azure]
+disabled=true
 
 [nodejs]
 symbol= "🧤 "
