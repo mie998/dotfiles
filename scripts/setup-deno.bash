@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+
+if command -v deno &> /dev/null
+then
+    echo "deno already installed!!"
+    exit 0
+fi
+
 set -x
 # shellcheck source=./scripts/common.bash
 source "$(dirname "$0")/common.bash"
