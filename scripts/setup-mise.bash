@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+
+if command -v mise &> /dev/null
+then
+    echo "mise already installed!!"
+    exit 0
+fi
+
 set -x
 # shellcheck source=./scripts/common.bash
 source "$(dirname "$0")/common.bash"
@@ -15,15 +22,11 @@ curl https://mise.run | sh
 echo "Install mise completions..."
 mkdir -p "$XDG_DATA_HOME/zsh/completions"
 "$MISE_INSTALL_PATH" completions zsh > "$XDG_DATA_HOME/zsh/completions/_mise"
+"$MISE_INSTALL_PATH" use -g usage
 
 # nodejs
 "$MISE_INSTALL_PATH" install node@lts
 "$MISE_INSTALL_PATH" use --global node@lts
 
-# golang
-"$MISE_INSTALL_PATH" install go@1.22.1
-"$MISE_INSTALL_PATH" use --global go@1.22.1
-
-# python
-"$MISE_INSTALL_PATH" install python@3.12.2
-"$MISE_INSTALL_PATH" use --global python@3.12.2
+# restart shell for path activate
+exec $SHELL -l
