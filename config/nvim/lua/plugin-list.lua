@@ -45,10 +45,7 @@ require("lazy").setup({
   require("plugins.neo-tree"),
 
   --Syntax Highlight
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate'
-  },
+  { 'nvim-treesitter/nvim-treesitter' },
   { 'JoosepAlviste/nvim-ts-context-commentstring' }, -- context-comment with treesitter
   {
     "yioneko/nvim-yati",
