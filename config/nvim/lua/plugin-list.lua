@@ -40,7 +40,6 @@ require("lazy").setup({
     dependencies = { 'nvim-web-devicons' }
   },
   { 'lambdalisue/glyph-palette.vim' },
-  require("plugins.fern"),
 
   -- file explorer
   require("plugins.neo-tree"),
