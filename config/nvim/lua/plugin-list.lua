@@ -65,7 +65,11 @@ require("lazy").setup({
   require("plugins.neo-tree"),
 
   --Syntax Highlight
-  { 'nvim-treesitter/nvim-treesitter' },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ":TSUpdate",
+    ensure_installed = 'all',
+  },
   { 'JoosepAlviste/nvim-ts-context-commentstring' }, -- context-comment with treesitter
   {
     "yioneko/nvim-yati",
@@ -73,13 +77,23 @@ require("lazy").setup({
   },
 
   -- Telescope
-  { 'nvim-telescope/telescope.nvim' },
-  { "nvim-telescope/telescope-frecency.nvim" },
+  require("plugins.telescope"),
 
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
-  { "neovim/nvim-lspconfig" },
+  {
+    "williamboman/mason.nvim",
+    build = ":MasonUpdate",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+      "hrsh7th/cmp-nvim-lsp",
+    },
+    config = function()
+      require("plugins.lsp.config").setup()
+    end,
+  },
 
   -- auto completion
   { 'hrsh7th/cmp-nvim-lsp' },
@@ -105,5 +119,11 @@ require("lazy").setup({
   {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
-  }
+  },
+
+  -- dashboard
+  require("plugins.dashboard"),
+
+  -- floating terminal
+  require("plugins.floaterm")
 })
