@@ -119,5 +119,8 @@ require("lazy").setup({
   {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
-  }
+  },
+
+  -- dashboard
+  require("plugins.dashboard"),
 })
