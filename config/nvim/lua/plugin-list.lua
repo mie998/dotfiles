@@ -73,8 +73,7 @@ require("lazy").setup({
   },
 
   -- Telescope
-  { 'nvim-telescope/telescope.nvim' },
-  { "nvim-telescope/telescope-frecency.nvim" },
+  require("plugins.telescope"),
 
   -- LSP
   { "williamboman/mason.nvim" },
