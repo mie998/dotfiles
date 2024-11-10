@@ -4,15 +4,14 @@ local function setup_diagnostics()
   vim.diagnostic.config({
     virtual_text = false,
     float = {
-      border = "rounded",   -- 境界線のスタイル
-      source = "always",    -- ソース（LSP名）を表示
-      header = "",          -- ヘッダーテキスト
-      prefix = "",          -- プレフィックステキスト
+      border = "rounded", -- 境界線のスタイル
+      source = "always",  -- ソース（LSP名）を表示
+      header = "",        -- ヘッダーテキスト
+      prefix = "",        -- プレフィックステキスト
     },
   })
 
   vim.api.nvim_create_autocmd("CursorHold", {
-    buffer = bufnr,
     callback = function()
       local opts = {
         focusable = false,
@@ -22,10 +21,10 @@ local function setup_diagnostics()
           "InsertEnter",
           "FocusLost"
         },
-        border = "rounded",   -- 境界線のスタイル
-        source = "always",    -- ソース（LSP名）を表示
-        prefix = "",          -- プレフィックステキスト
-        scope = "cursor",     -- カーソル位置のみの診断を表示
+        border = "rounded", -- 境界線のスタイル
+        source = "always",  -- ソース（LSP名）を表示
+        prefix = "",        -- プレフィックステキスト
+        scope = "cursor",   -- カーソル位置のみの診断を表示
       }
       vim.diagnostic.open_float(nil, opts)
     end
