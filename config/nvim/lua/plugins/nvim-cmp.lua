@@ -118,6 +118,34 @@ local config = function()
       end,
     },
   })
+
+  -- setting for cmdline
+  require('cmp').setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'path' },
+      { name = 'cmdline' }
+    },
+    formatting = {
+      format = function(entry, vim_item)
+        vim_item.kind = require('lspkind').presets.default[vim_item.kind]
+        return vim_item
+      end,
+    },
+    window = {
+      completion = {
+        border = 'rounded',
+        winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+      },
+    },
+  })
+
+  require('cmp').setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+  })
 end
 
 return {
@@ -131,6 +159,7 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-cmdline",
       "ray-x/cmp-treesitter",
       "saadparwaiz1/cmp_luasnip",
       'onsails/lspkind.nvim',
