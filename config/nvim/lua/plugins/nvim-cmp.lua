@@ -121,6 +121,7 @@ local config = function()
 
   -- setting for cmdline
   require('cmp').setup.cmdline(':', {
+    -- NOTE: なぜか他のcmpと<C-n> と <C-p> の挙動が逆になるので修正したい
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'path' },
@@ -139,8 +140,8 @@ local config = function()
       },
     },
   })
-
   require('cmp').setup.cmdline('/', {
+    -- NOTE: なぜか他のcmpと <C-n> と <C-p> の挙動が逆になるので修正したい
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' }
