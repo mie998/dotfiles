@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -eux
 
+# restart shell in case cargo is not in the $PATH
+exec $SHELL -l
+
 cargo install \
     cargo-binstall
 
