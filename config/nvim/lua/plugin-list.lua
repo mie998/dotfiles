@@ -95,6 +95,9 @@ require("lazy").setup({
     end,
   },
 
+  -- saga
+  require("plugins.lspsaga"),
+
   -- auto completion
   require("plugins.nvim-cmp"),
 
