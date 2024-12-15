@@ -27,6 +27,12 @@ local config = function()
           behavior = cmp.ConfirmBehavior.Insert,
         })
       ),
+      ["<Tab>"] = cmp.mapping(
+        cmp.mapping.confirm({
+          select = true,
+          behavior = cmp.ConfirmBehavior.Insert,
+        })
+      ),
       ["<C-n>"] = cmp.mapping.select_next_item({
         behavior = cmp.ConfirmBehavior.Insert,
       }),
