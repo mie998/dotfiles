@@ -119,7 +119,4 @@ require("lazy").setup({
 
   -- dashboard
   require("plugins.dashboard"),
-
-  -- floating terminal
-  require("plugins.floaterm")
 })
