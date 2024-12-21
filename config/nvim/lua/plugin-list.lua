@@ -1,5 +1,9 @@
 vim.cmd("autocmd!")
 
+-- When config is not present, and opts is, Lazy calls the plugin’s setup automatically, passing opts as the argument.
+-- If you want to use both, you need to call setup inside config yourself, passing the options.
+-- Lazy passes opts as the second argument of config, so you can then just call require(‘myplugin’).setup(opts).
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.system({
@@ -35,24 +39,7 @@ require("lazy").setup({
   { 'nvim-lualine/lualine.nvim' },
 
   -- WhichKey
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-    keys = {
-      {
-        "<leader>",
-        function()
-          require("which-key").show({ global = false })
-        end,
-        desc = "Buffer Local Keymaps (which-key)",
-      },
-    },
-  },
+  require("plugins.whichkey"),
 
   -- Buffer Control
   {
