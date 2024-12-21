@@ -8,7 +8,7 @@ vim.g.maplocalleader = " "
 vim.keymap.set("i", "jj", "<Esc>")
 
 -- exit terminal mode
-vim.keymap.set('t', '<Esc>', "<C-\\><C-n><C-w>h", { silent = true })
+vim.keymap.set('t', '<C-\\>', "<C-\\><C-n><C-w>h", { silent = true })
 
 -- fastmove
 vim.keymap.set("n", "<S-k>", "10k")
