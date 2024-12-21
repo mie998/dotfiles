@@ -16,10 +16,4 @@ return {
       },
     },
   },
-  keys = {
-    { '<leader>g', function()
-      -- glob_patternオプションを引数で指定
-      require('telescope.builtin').live_grep({ glob_pattern = '!.git' })
-    end },
-  },
 }
