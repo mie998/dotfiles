@@ -10,25 +10,6 @@ local function setup_diagnostics()
       prefix = "",        -- プレフィックステキスト
     },
   })
-
-  vim.api.nvim_create_autocmd("CursorHold", {
-    callback = function()
-      local opts = {
-        focusable = false,
-        close_events = {
-          "BufLeave",
-          "CursorMoved",
-          "InsertEnter",
-          "FocusLost"
-        },
-        border = "rounded", -- 境界線のスタイル
-        source = "always",  -- ソース（LSP名）を表示
-        prefix = "",        -- プレフィックステキスト
-        scope = "cursor",   -- カーソル位置のみの診断を表示
-      }
-      vim.diagnostic.open_float(nil, opts)
-    end
-  })
 end
 
 local M = {}
@@ -64,11 +45,6 @@ function M.setup()
 
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-
-      vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, bufopts)
-      vim.keymap.set('n', '<C-k>', function()
-        vim.diagnostic.open_float({ border = "rounded" })
-      end, bufopts)
     end,
     capabilities = require('cmp_nvim_lsp').default_capabilities()
   }
