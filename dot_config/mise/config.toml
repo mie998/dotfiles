@@ -1,0 +1,36 @@
+[settings]
+experimental = true
+lockfile = true
+lockfile_platforms = ["linux-x64", "linux-arm64", "macos-arm64"]
+
+[tools]
+# Only Node publishes an LTS alias. Rust uses its stable channel; the remaining
+# runtimes use their latest stable release because they do not expose a common
+# LTS channel through mise.
+node = "lts"
+rust = "stable"
+go = "latest"
+python = "latest"
+deno = "latest"
+bun = "latest"
+usage = "latest"
+"github:denisidoro/navi" = "latest"
+
+# Pre-built GitHub Releases replacing the old cargo-binstall inventory.
+"github:sharkdp/bat" = "latest"
+"github:eza-community/eza" = "latest"
+"github:sharkdp/fd" = "latest"
+"github:dandavison/delta" = "latest"
+"github:gitui-org/gitui" = "latest"
+"github:pemistahl/grex" = "latest"
+"github:sharkdp/hexyl" = "latest"
+"github:sharkdp/hyperfine" = "latest"
+"github:lsd-rs/lsd" = "latest"
+"github:BurntSushi/ripgrep" = "latest"
+"github:chmln/sd" = "latest"
+"github:starship/starship" = "latest"
+"github:rossmacarthur/sheldon" = "latest"
+"github:tealdeer-rs/tealdeer" = "latest"
+"github:XAMPPRocky/tokei" = "latest"
+"github:ducaale/xh" = "latest"
+"github:ajeetdsouza/zoxide" = "latest"

@@ -1,0 +1,13 @@
+# Repository-only entries. Everything else in this source root is managed by
+# chezmoi using its source-state naming conventions.
+AGENTS.md
+LICENSE.md
+README.md
+flake.lock
+flake.nix
+home
+install.sh
+out
+result
+result-*
+scripts

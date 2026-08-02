@@ -1,3 +1,0 @@
-[submodule "user"]
-	path = config/nvim/lua/user
-	url = https://github.com/mie998/astro-nvim-config.git
