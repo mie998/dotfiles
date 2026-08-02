@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dotfiles Maintenance"
+  short_description: "Maintain this Nix, mise, and chezmoi environment"
+  default_prompt: "Use $dotfiles-maintenance to update this dotfiles environment safely."
