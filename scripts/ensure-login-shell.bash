@@ -21,10 +21,19 @@ if [[ "${login_shell##*/}" == zsh ]]; then
 fi
 
 echo "Changing the login shell to Nix-managed zsh: $target_shell"
+if [[ -r /etc/shells ]] && ! grep -Fqx "$target_shell" /etc/shells; then
+    echo "Registering Nix-managed zsh in /etc/shells"
+    if ! command -v sudo >/dev/null 2>&1; then
+        echo "sudo is required to add $target_shell to /etc/shells." >&2
+        exit 1
+    fi
+    if ! printf '%s\n' "$target_shell" | sudo tee -a /etc/shells >/dev/null; then
+        echo "Could not add $target_shell to /etc/shells." >&2
+        exit 1
+    fi
+fi
+
 if ! chsh -s "$target_shell"; then
     echo "Could not set the login shell to $target_shell." >&2
-    if [[ -r /etc/shells ]] && ! grep -Fqx "$target_shell" /etc/shells; then
-        echo "Add that path to /etc/shells, then rerun the installer." >&2
-    fi
     exit 1
 fi
