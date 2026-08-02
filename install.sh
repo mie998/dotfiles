@@ -100,4 +100,6 @@ else
     "$CHEZMOI" --source "$INSTALL_DIR" init --apply --promptDefaults
 fi
 
+"$INSTALL_DIR/scripts/ensure-login-shell.bash" "$PROFILE_LINK"
+
 echo "Dotfiles installed. Start a new login shell to activate the environment."

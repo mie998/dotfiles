@@ -40,3 +40,4 @@ fi
 
 ensure_runtime_dir
 "$CHEZMOI" --source "$REPO_DIR" init --apply "$@"
+"$REPO_DIR/scripts/ensure-login-shell.bash" "$PROFILE_LINK"
