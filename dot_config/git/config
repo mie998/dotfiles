@@ -1,6 +1,11 @@
 [core]
     autocrlf = false
     ignoreCase = false
+    editor = vim
+
+[user]
+    email = nishiwaki.kyoto@gmail.com
+    name = mie998
 
 [init]
     defaultBranch = main
@@ -41,4 +46,3 @@
 [include]
     path = conf.d/alias.conf
     path = conf.d/delta.conf
-    path = ~/.config/dotfiles/secrets/git.conf

@@ -371,13 +371,15 @@ alias tree='eza --group-directories-first -T --icons'
 alias hgrep="hgrep --hidden --glob='!.git/'"
 
 ### navi ###
-__navi_search() {
-    LBUFFER="$(navi --print --query="$LBUFFER")"
-    zle reset-prompt
-}
-export NAVI_CONFIG="$XDG_CONFIG_HOME/navi/config.yaml"
-zle -N __navi_search
-bindkey '^N' __navi_search
+if (( ${+commands[navi]} )); then
+    __navi_search() {
+        LBUFFER="$(navi --print --query="$LBUFFER")"
+        zle reset-prompt
+    }
+    export NAVI_CONFIG="$XDG_CONFIG_HOME/navi/config.yaml"
+    zle -N __navi_search
+    bindkey '^N' __navi_search
+fi
 
 ### chpwd-recent-dirs ###
 add-zsh-hook chpwd chpwd_recent_dirs
@@ -506,9 +508,6 @@ export MYSQL_HISTFILE="$XDG_STATE_HOME/mysql_history"
 export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 
 ### local ###
-if [ -r "$XDG_CONFIG_HOME/dotfiles/secrets/zsh.env" ]; then
-    source "$XDG_CONFIG_HOME/dotfiles/secrets/zsh.env"
-fi
 if [ -f "$ZDOTDIR/.zshrc.local" ]; then
     source "$ZDOTDIR/.zshrc.local"
 fi

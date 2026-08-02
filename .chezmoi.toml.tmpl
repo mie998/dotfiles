@@ -1,16 +1,4 @@
-{{- $useOnePassword := promptBoolOnce . "onepassword.enabled" "Use 1Password for private dotfiles" false -}}
-{{- $gitConfigRef := "" -}}
-{{- $zshSecretsRef := "" -}}
-{{- if $useOnePassword -}}
-{{-   $gitConfigRef = promptStringOnce . "onepassword.gitConfig" "1Password reference containing private Git config" "op://Private/dotfiles/git-config" -}}
-{{-   $zshSecretsRef = promptStringOnce . "onepassword.zshSecrets" "1Password reference containing private Zsh settings" "op://Private/dotfiles/zsh-secrets" -}}
-{{- end -}}
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 [diff]
     pager = "delta"
-
-[data.onepassword]
-    enabled = {{ $useOnePassword }}
-    gitConfig = {{ $gitConfigRef | quote }}
-    zshSecrets = {{ $zshSecretsRef | quote }}

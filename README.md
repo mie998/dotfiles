@@ -26,21 +26,12 @@ curl -fsSL https://mie998.github.io/dotfiles/install.sh | sh
 
 - Nix: chezmoi、mise、1Password CLI、Zsh、Vim、Neovim、Git、ビルドツールなど
 - mise: Go、Python、Node.js LTS、Deno、Bun、Rust stable、および旧 cargo-binstall の単体 CLI
-- chezmoi: `~/.config` の設定、`~/.zshenv`、グローバル Codex skill、1Password 由来の private file
+- chezmoi: `~/.config` の設定、`~/.zshenv`、グローバル Codex skill
 - 既存方式を維持: Sheldon、VimのJetpack、Neovimのlazy.nvim・Mason
 
 設定実体は`~/.config/zsh`と`~/.config/vim`に置き、ZshとVimが探索できるよう`~/.zshenv`と`~/.vim`だけを相対シンボリックリンクとして管理します。
 
 GUI アプリ、Docker daemon / Docker Desktop、Wireshark の privileged integration、1Password GUI はホスト側の前提です。APT、Homebrew、cargo-binstall による fallback はありません。
-
-## 1Password
-
-初回の対話セットアップで 1Password を有効にすると、chezmoi は次の secret reference を尋ねます。
-
-- private Git config を格納した field（既定: `op://Private/dotfiles/git-config`）
-- private Zsh 設定を格納した field（既定: `op://Private/dotfiles/zsh-secrets`）
-
-値は 1Password CLI の `op read` 相当で取得され、権限 `0600` のファイルとして反映されます。secret 本体や `OP_SERVICE_ACCOUNT_TOKEN` はリポジトリへ保存しません。無効にした場合は private file を生成しません。
 
 ## 日常操作
 
@@ -61,4 +52,3 @@ chezmoi --source "$PWD" diff
 
 - [Nix installation](https://nix.dev/install-nix)
 - [mise backends](https://mise.jdx.dev/dev-tools/backends/)
-- [chezmoi and 1Password](https://www.chezmoi.io/user-guide/password-managers/1password/)

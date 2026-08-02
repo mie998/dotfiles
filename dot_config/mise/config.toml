@@ -2,7 +2,6 @@
 experimental = true
 lockfile = true
 lockfile_platforms = ["linux-x64", "linux-arm64", "macos-arm64"]
-legacy_version_file_disable_tools = ["sbt"]
 
 [tools]
 # Only Node publishes an LTS alias. Rust uses its stable channel; the remaining
