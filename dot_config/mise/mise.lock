@@ -64,18 +64,6 @@ backend = "github:chmln/sd"
 version = "0.19.2"
 backend = "github:dandavison/delta"
 
-[[tools."github:denisidoro/navi"]]
-version = "2.24.0"
-backend = "github:denisidoro/navi"
-
-[tools."github:denisidoro/navi"."platforms.linux-arm64"]
-url = "https://github.com/denisidoro/navi/releases/download/v2.24.0/navi-v2.24.0-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/denisidoro/navi/releases/assets/224750161"
-
-[tools."github:denisidoro/navi"."platforms.linux-x64"]
-url = "https://github.com/denisidoro/navi/releases/download/v2.24.0/navi-v2.24.0-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/denisidoro/navi/releases/assets/224750154"
-
 [[tools."github:ducaale/xh"]]
 version = "0.26.2"
 backend = "github:ducaale/xh"
