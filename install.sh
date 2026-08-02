@@ -72,11 +72,17 @@ nix --extra-experimental-features "nix-command flakes" \
 
 PATH="$PROFILE_LINK/bin:$PATH"
 export PATH
+CHEZMOI="$PROFILE_LINK/bin/chezmoi"
+
+if [ ! -x "$CHEZMOI" ]; then
+    echo "Nix package profile does not contain chezmoi: $CHEZMOI" >&2
+    exit 1
+fi
 
 if [ -t 0 ]; then
-    chezmoi --source "$INSTALL_DIR" init --apply
+    "$CHEZMOI" --source "$INSTALL_DIR" init --apply
 else
-    chezmoi --source "$INSTALL_DIR" init --apply --promptDefaults
+    "$CHEZMOI" --source "$INSTALL_DIR" init --apply --promptDefaults
 fi
 
 echo "Dotfiles installed. Start a new login shell to activate the environment."
