@@ -7,18 +7,14 @@ local utils = require("utils")
 --- keybinds
 ---------------------------------------------------------------
 M.tmux_keybinds = {
-  { key = "k", mods = "LEADER", action = act({ SpawnTab = "CurrentPaneDomain" }) },
-  { key = "j", mods = "LEADER", action = act({ CloseCurrentTab = { confirm = true } }) },
-  { key = "h", mods = "ALT",    action = act({ ActivateTabRelative = -1 }) },
-  { key = "l", mods = "ALT",    action = act({ ActivateTabRelative = 1 }) },
-  { key = "h", mods = "CTRL",   action = act({ MoveTabRelative = -1 }) },
-  { key = "l", mods = "CTRL",   action = act({ MoveTabRelative = 1 }) },
-  {
-    key = "k",
-    mods = "LEADER|CTRL",
-    action = act.Multiple({ act.CopyMode("ClearSelectionMode"), act.ActivateCopyMode, act.ClearSelection }),
-  },
-  { key = "j",     mods = "ALT|CTRL", action = act({ PasteFrom = "PrimarySelection" }) },
+  { key = "r",     mods = "LEADER",       action = "ReloadConfiguration" },
+  { key = "|",     mods = "LEADER|SHIFT", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+  { key = "\\",    mods = "LEADER",       action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+  { key = "-",     mods = "LEADER",       action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+  { key = "c",     mods = "LEADER",       action = act({ SpawnTab = "CurrentPaneDomain" }) },
+  { key = "w",     mods = "LEADER|CTRL",  action = act({ CloseCurrentTab = { confirm = true } }) },
+  { key = "n",     mods = "LEADER",       action = act({ ActivateTabRelative = 1 }) },
+  { key = "p",     mods = "LEADER",       action = act({ ActivateTabRelative = -1 }) },
   { key = "1",     mods = "LEADER",   action = act({ ActivateTab = 0 }) },
   { key = "2",     mods = "LEADER",   action = act({ ActivateTab = 1 }) },
   { key = "3",     mods = "LEADER",   action = act({ ActivateTab = 2 }) },
@@ -28,14 +24,28 @@ M.tmux_keybinds = {
   { key = "7",     mods = "LEADER",   action = act({ ActivateTab = 6 }) },
   { key = "8",     mods = "LEADER",   action = act({ ActivateTab = 7 }) },
   { key = "9",     mods = "LEADER",   action = act({ ActivateTab = 8 }) },
-  { key = "\"",    mods = "LEADER",   action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-  { key = "\\",    mods = "LEADER",   action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
   { key = "h",     mods = "LEADER",   action = act({ ActivatePaneDirection = "Left" }) },
-  { key = "l",     mods = "LEADER",   action = act({ ActivatePaneDirection = "Right" }) },
-  { key = "k",     mods = "LEADER",   action = act({ ActivatePaneDirection = "Up" }) },
   { key = "j",     mods = "LEADER",   action = act({ ActivatePaneDirection = "Down" }) },
-  { key = "Enter", mods = "LEADER",   action = "QuickSelect" },
-  { key = "/",     mods = "LEADER",   action = act.Search("CurrentSelectionOrEmptyString") },
+  { key = "k",     mods = "LEADER",   action = act({ ActivatePaneDirection = "Up" }) },
+  { key = "l",     mods = "LEADER",   action = act({ ActivatePaneDirection = "Right" }) },
+  { key = "H",     mods = "LEADER|SHIFT", action = act({ AdjustPaneSize = { "Left", 5 } }) },
+  { key = "J",     mods = "LEADER|SHIFT", action = act({ AdjustPaneSize = { "Down", 5 } }) },
+  { key = "K",     mods = "LEADER|SHIFT", action = act({ AdjustPaneSize = { "Up", 5 } }) },
+  { key = "L",     mods = "LEADER|SHIFT", action = act({ AdjustPaneSize = { "Right", 5 } }) },
+  { key = "/",     mods = "LEADER",      action = act.Search("CurrentSelectionOrEmptyString") },
+  { key = "u",     mods = "LEADER|CTRL", action = "QuickSelect" },
+  {
+    key = "i",
+    mods = "LEADER|CTRL",
+    action = act.QuickSelectArgs({ patterns = { "\\b\\d{1,3}(?:\\.\\d{1,3}){3}\\b" } }),
+  },
+  { key = "p", mods = "LEADER|CTRL", action = act({ PasteFrom = "Clipboard" }) },
+  { key = "x", mods = "LEADER",      action = act({ CloseCurrentPane = { confirm = true } }) },
+  {
+    key = "g",
+    mods = "LEADER",
+    action = act({ SpawnCommandInNewTab = { args = { "lazygit" } } }),
+  },
 }
 
 M.default_keybinds = {
@@ -54,23 +64,8 @@ M.default_keybinds = {
   { key = "PageDown", mods = "ALT",        action = act({ ScrollByPage = 1 }) },
   { key = "b",        mods = "ALT",        action = act({ ScrollByPage = -1 }) },
   { key = "f",        mods = "ALT",        action = act({ ScrollByPage = 1 }) },
-  { key = "x",        mods = "LEADER",     action = act({ CloseCurrentPane = { confirm = true } }) },
-  { key = "c",        mods = "LEADER",     action = act({ SpawnTab = 'CurrentPaneDomain' }) },
-  { key = " ",        mods = "LEADER",     action = wezterm.action.ShowTabNavigator },
   { key = "a",        mods = "ALT|SHIFT",  action = wezterm.action.ShowLauncher },
   { key = "d",        mods = "ALT|SHIFT",  action = wezterm.action.ShowDebugOverlay },
-  {
-    key = "r",
-    mods = "LEADER",
-    action = act({
-      ActivateKeyTable = {
-        name = "resize_pane",
-        one_shot = false,
-        timeout_milliseconds = 3000,
-        replace_current = false,
-      },
-    }),
-  },
   {
     key = "s",
     mods = "ALT",
@@ -108,18 +103,6 @@ function M.create_keybinds()
 end
 
 M.key_tables = {
-  resize_pane = {
-    { key = "LeftArrow",  action = act({ AdjustPaneSize = { "Left", 1 } }) },
-    { key = "h",          action = act({ AdjustPaneSize = { "Left", 1 } }) },
-    { key = "RightArrow", action = act({ AdjustPaneSize = { "Right", 1 } }) },
-    { key = "l",          action = act({ AdjustPaneSize = { "Right", 1 } }) },
-    { key = "UpArrow",    action = act({ AdjustPaneSize = { "Up", 1 } }) },
-    { key = "k",          action = act({ AdjustPaneSize = { "Up", 1 } }) },
-    { key = "DownArrow",  action = act({ AdjustPaneSize = { "Down", 1 } }) },
-    { key = "j",          action = act({ AdjustPaneSize = { "Down", 1 } }) },
-    -- Cancel the mode by pressing escape
-    { key = "Escape",     action = "PopKeyTable" },
-  },
   copy_mode = {
     {
       key = "Escape",

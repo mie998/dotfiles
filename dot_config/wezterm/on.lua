@@ -1,6 +1,5 @@
 local wezterm = require("wezterm")
 local utils = require("utils")
-local keybinds = require("keybinds")
 local scheme = wezterm.get_builtin_color_schemes()["nord"]
 local act = wezterm.action
 
@@ -146,18 +145,6 @@ end)
 
 -- selene: allow(unused_variable)
 ---@diagnostic disable-next-line: unused-local
-wezterm.on("toggle-tmux-keybinds", function(window, pane)
-  local overrides = window:get_config_overrides() or {}
-  if not overrides.window_background_opacity then
-    overrides.window_background_opacity = 0.95
-    overrides.keys = keybinds.default_keybinds
-  else
-    overrides.window_background_opacity = nil
-    overrides.keys = utils.merge_lists(keybinds.default_keybinds, keybinds.tmux_keybinds)
-  end
-  window:set_config_overrides(overrides)
-end)
-
 local io = require("io")
 local os = require("os")
 
