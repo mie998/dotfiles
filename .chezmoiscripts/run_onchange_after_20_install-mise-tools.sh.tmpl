@@ -11,12 +11,15 @@ fi
 
 mise install --yes
 
-if ! command -v sheldon >/dev/null 2>&1; then
+if ! mise exec -- sheldon --version >/dev/null 2>&1; then
     echo "sheldon must be installed by mise before chezmoi apply" >&2
     exit 1
 fi
 
-sheldon lock
+# `mise install` installs the tool but does not modify PATH for this
+# non-interactive chezmoi script. Run Sheldon through mise so the managed
+# binary is available here as well as in activated login shells.
+mise exec -- sheldon lock
 
 # zeno.zsh still passes the removed Deno 1.x --unstable flag. Keep the
 # plugin managed by Sheldon, but make its generated function Deno 2 compatible.
