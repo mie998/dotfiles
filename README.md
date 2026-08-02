@@ -24,12 +24,12 @@ curl -fsSL https://mie998.github.io/dotfiles/install.sh | sh
 
 ## 管理範囲
 
-- Nix: chezmoi、mise、1Password CLI、Zsh、Neovim、Git、ビルドツールなど
+- Nix: chezmoi、mise、1Password CLI、Zsh、Vim、Neovim、Git、ビルドツールなど
 - mise: Go、Python、Node.js LTS、Deno、Bun、Rust stable、および旧 cargo-binstall の単体 CLI
 - chezmoi: `~/.config` の設定、`~/.zshenv`、グローバル Codex skill、1Password 由来の private file
-- 既存方式を維持: Sheldon、Neovimのlazy.nvim・Mason
+- 既存方式を維持: Sheldon、VimのJetpack、Neovimのlazy.nvim・Mason
 
-`~/.zshenv` はZshがXDGパスと`ZDOTDIR`を確立するための通常ファイルです。クラシックVimとJetpackは管理せず、ターミナルエディタはNeovimへ統一しています。
+設定実体は`~/.config/zsh`と`~/.config/vim`に置き、ZshとVimが探索できるよう`~/.zshenv`と`~/.vim`だけを相対シンボリックリンクとして管理します。
 
 GUI アプリ、Docker daemon / Docker Desktop、Wireshark の privileged integration、1Password GUI はホスト側の前提です。APT、Homebrew、cargo-binstall による fallback はありません。
 

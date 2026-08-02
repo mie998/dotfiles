@@ -70,6 +70,7 @@
             trash-cli
             tree
             unzip
+            vim
             wget
             yq-go
             zip

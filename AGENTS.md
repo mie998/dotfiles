@@ -12,6 +12,7 @@
 - Use mise, installed by Nix, for Go, Python, Node.js, Deno, Bun, Rust, and standalone developer binaries from the GitHub backend.
 - Use chezmoi, installed by Nix, to apply home-directory state.
 - Keep the existing Sheldon workflow for Zsh plugins.
+- Keep the existing Jetpack workflow for classic Vim plugins.
 - Keep the existing lazy.nvim and Mason workflows for Neovim plugins and editor tooling.
 - Use 1Password CLI through chezmoi templates for secrets. Never put secret values in Git, Nix expressions, the Nix store, logs, or documentation.
 
@@ -22,7 +23,8 @@ Do not introduce APT, Homebrew, `cargo install`, cargo-binstall, rustup bootstra
 - `flake.nix`: supported systems, host package set, development shell, and formatter.
 - The repository root is the chezmoi source state. `.chezmoiignore` excludes repository-only files.
 - `dot_config/`: the canonical chezmoi source for everything installed below `~/.config`.
-- `dot_zshenv`: the regular-file bootstrap installed at `~/.zshenv`; it establishes XDG paths and `ZDOTDIR` before Zsh reads `dot_config/zsh/dot_zshrc`.
+- `dot_config/zsh/dot_zshenv`: the Zsh bootstrap installed at `~/.config/zsh/.zshenv`; the root `symlink_dot_zshenv.tmpl` exposes it as `~/.zshenv` so Zsh can establish `ZDOTDIR`.
+- `dot_config/vim/`: classic Vim configuration exposed through the root `symlink_dot_vim.tmpl` compatibility link at `~/.vim`.
 - `dot_config/mise/config.toml`: global runtime and standalone-binary inventory.
 - Use chezmoi source-state names inside `dot_config`: `dot_` for target dotfiles and `executable_` for executable targets. Do not recreate a parallel `config/` tree or application-directory symlinks.
 - `dot_codex/skills/dotfiles-maintenance/`: globally installed Codex skill at `~/.codex/skills/dotfiles-maintenance/`.
@@ -32,7 +34,6 @@ Do not introduce APT, Homebrew, `cargo install`, cargo-binstall, rustup bootstra
 `cargo-update` is intentionally absent: no binaries are managed by Cargo after this migration. Node uses `lts`; Rust uses `stable`; Go, Python, Deno, and Bun use `latest` because a common LTS alias is not available for all of them.
 
 Use unstable nixpkgs for every supported target. Intel macOS (`x86_64-darwin`) is intentionally unsupported.
-Classic Vim and Jetpack are intentionally absent; use Neovim with lazy.nvim and Mason.
 
 ## Change workflow
 

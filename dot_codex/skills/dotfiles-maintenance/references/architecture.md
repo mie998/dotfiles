@@ -16,6 +16,7 @@
 | Home-directory state | chezmoi | repository-root source-state entries |
 | Secrets | 1Password CLI + chezmoi templates | machine-local `op://` references |
 | Zsh plugins | Sheldon | `dot_config/sheldon/plugins.toml` |
+| Classic Vim plugins | Jetpack | `dot_config/vim/` |
 | Neovim plugins and tools | lazy.nvim + Mason | `dot_config/nvim/` |
 
 Use unstable nixpkgs for every supported target. Intel macOS (`x86_64-darwin`) is unsupported.
@@ -34,7 +35,7 @@ Nix is bootstrapped only with the official Nix installer. Do not add APT, Homebr
 
 Application configuration lives only in `dot_config/` and chezmoi installs it as normal files and directories below `~/.config`. Do not add a parallel `config/` tree or application-directory symlinks. Encode target dotfiles with `dot_` and executable targets with `executable_`. Keep application directories non-exact so machine-local runtime state such as `.zshrc.local`, plugin data, and generated caches is not removed by apply.
 
-`dot_zshenv` is the only required home-root shell bootstrap and is installed as a regular `~/.zshenv` file. It sets the XDG variables before setting `ZDOTDIR=$XDG_CONFIG_HOME/zsh`; subsequent interactive Zsh configuration comes from `dot_config/zsh/dot_zshrc`. Classic Vim, `~/.vim`, and Jetpack are not managed. Neovim with lazy.nvim and Mason is the sole terminal editor workflow.
+The canonical Zsh and Vim files live below `dot_config/`. Root compatibility entries are limited to `~/.zshenv -> .config/zsh/.zshenv`, which bootstraps XDG variables and `ZDOTDIR`, and `~/.vim -> .config/vim`, which lets classic Vim discover its Vimrc, colors, and Jetpack runtime. These links do not create a second configuration source.
 
 ## Version policy
 

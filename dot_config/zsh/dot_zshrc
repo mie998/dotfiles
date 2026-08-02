@@ -202,10 +202,7 @@ grr = () {
 ggrr = () {
   git grep --color -r $1 ./*
 }
-if (( ${+commands[nvim]} )); then
-    alias vi='nvim'
-    alias vim='nvim'
-fi
+alias vi='vim'
 alias src='source'
 
 ### OS specific aliases ###
@@ -464,6 +461,7 @@ docker-rmi() {
 
 ### Editor ###
 export EDITOR="vi"
+(( ${+commands[vim]} )) && EDITOR="vim"
 (( ${+commands[nvim]} )) && EDITOR="nvim"
 export GIT_EDITOR="$EDITOR"
 e() {
