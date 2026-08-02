@@ -1,14 +1,14 @@
 name: Ubuntu
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  ubuntu:
-    name: Ubuntu
-    runs-on: ubuntu-latest
-    concurrency:
-      group: ubuntu-setup
-      cancel-in-progress: true
+  build:
+    strategy:
+      matrix:
+        runner: [ubuntu-latest, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
     steps:
-      - name: Setup
-        run: curl -sL https://mie998.github.io/dotfiles/install.sh | sh
+      - uses: actions/checkout@v6
+      - uses: cachix/install-nix-action@v31
+      - run: nix build path:.#default
