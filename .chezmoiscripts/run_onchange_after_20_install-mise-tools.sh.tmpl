@@ -1,6 +1,7 @@
 #!/bin/sh
 # mise-config-sha256: {{ include "dot_config/mise/config.toml" | sha256sum }}
 # mise-lock-sha256: {{ include "dot_config/mise/mise.lock" | sha256sum }}
+# sheldon-config-sha256: {{ include "dot_config/sheldon/plugins.toml" | sha256sum }}
 set -eu
 
 if ! command -v mise >/dev/null 2>&1; then
@@ -9,3 +10,10 @@ if ! command -v mise >/dev/null 2>&1; then
 fi
 
 mise install --yes
+
+if ! command -v sheldon >/dev/null 2>&1; then
+    echo "sheldon must be installed by mise before chezmoi apply" >&2
+    exit 1
+fi
+
+sheldon lock

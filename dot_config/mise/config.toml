@@ -14,6 +14,7 @@ python = "latest"
 deno = "latest"
 bun = "latest"
 usage = "latest"
+"npm:@openai/codex" = "latest"
 "github:denisidoro/navi" = "latest"
 
 # Pre-built GitHub Releases replacing the old cargo-binstall inventory.
