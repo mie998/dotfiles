@@ -32,6 +32,19 @@ load_nix() {
     done
 }
 
+ensure_runtime_dir() {
+    runtime_probe="${XDG_RUNTIME_DIR:-}/.dotfiles-runtime-probe-$$"
+    if [ -n "${XDG_RUNTIME_DIR:-}" ] && [ -d "$XDG_RUNTIME_DIR" ] && : > "$runtime_probe" 2>/dev/null; then
+        rm -f "$runtime_probe"
+        return
+    fi
+
+    XDG_RUNTIME_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/runtime"
+    mkdir -p "$XDG_RUNTIME_DIR"
+    chmod 700 "$XDG_RUNTIME_DIR"
+    export XDG_RUNTIME_DIR
+}
+
 if ! command -v nix >/dev/null 2>&1; then
     echo "Installing Nix..."
     if [ "$(uname -s)" = Linux ] && grep -qi microsoft /proc/sys/kernel/osrelease 2>/dev/null && [ ! -d /run/systemd/system ]; then
@@ -78,6 +91,8 @@ if [ ! -x "$CHEZMOI" ]; then
     echo "Nix package profile does not contain chezmoi: $CHEZMOI" >&2
     exit 1
 fi
+
+ensure_runtime_dir
 
 if [ -t 0 ]; then
     "$CHEZMOI" --source "$INSTALL_DIR" init --apply
