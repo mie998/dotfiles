@@ -405,9 +405,8 @@ export ZENO_DISABLE_BUILTIN_COMPLETION=1
 export ZENO_GIT_CAT="bat --color=always"
 export ZENO_GIT_TREE="eza --tree"
 if [[ -n $ZENO_LOADED ]]; then
-    # Keep the space key as normal self-insert. Zeno's auto-snippet widget
-    # can rewrite the current buffer while the command is being typed.
-    bindkey '^M' zeno-auto-snippet-and-accept-line
+    # Keep space and Enter as normal Zsh editing keys. Zeno's auto-snippet
+    # widgets can rewrite or clear the current buffer while typing.
     bindkey '^P' zeno-completion
 fi
 
