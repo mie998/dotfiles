@@ -52,10 +52,6 @@ url = "https://dl.deno.land/release/v2.9.4/deno-aarch64-apple-darwin.zip"
 version = "15.2.0"
 backend = "github:BurntSushi/ripgrep"
 
-[[tools."github:XAMPPRocky/tokei"]]
-version = "14.0.0"
-backend = "github:XAMPPRocky/tokei"
-
 [[tools."github:ajeetdsouza/zoxide"]]
 version = "0.10.0"
 backend = "github:ajeetdsouza/zoxide"

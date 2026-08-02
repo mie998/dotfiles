@@ -1,0 +1,4 @@
+### Nix dotfiles profile ###
+DOTFILES_NIX_PROFILE="${XDG_STATE_HOME:-$HOME/.local/state}/nix/profiles/dotfiles"
+PATH="$DOTFILES_NIX_PROFILE/bin:$PATH"
+export PATH

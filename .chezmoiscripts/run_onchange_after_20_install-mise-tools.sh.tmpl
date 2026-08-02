@@ -17,3 +17,11 @@ if ! command -v sheldon >/dev/null 2>&1; then
 fi
 
 sheldon lock
+
+# zeno.zsh still passes the removed Deno 1.x --unstable flag. Keep the
+# plugin managed by Sheldon, but make its generated function Deno 2 compatible.
+zeno_function_dir="${XDG_DATA_HOME:-$HOME/.local/share}/sheldon/repos/github.com/yuki-yano/zeno.zsh/shell/function"
+if [ -f "$zeno_function_dir/zeno" ] && [ -w "$zeno_function_dir/zeno" ]; then
+    sed -i.bak 's/deno run --unstable --no-check/deno run --no-check/' "$zeno_function_dir/zeno"
+    rm -f "$zeno_function_dir/zeno.bak"
+fi
